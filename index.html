@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Únete al equipo de 4G Architecture. Explora nuestras vacantes en arquitectura, ingeniería BIM, finanzas, management y más. Barranquilla, Colombia." />
+  <title>Work With Us — 4G Architecture</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════
+       HEADER
+  ══════════════════════════════════════ -->
+  <header class="header">
+    <div class="container">
+      <a href="https://www.4garchitecture.com" class="header__logo" aria-label="4G Architecture — Sitio principal">
+        <img src="assets/LOGO 4G.png" alt="4G Architecture" class="header__logo-img" />
+      </a>
+      <nav class="header__nav" aria-label="Navegación principal">
+        <a href="#vacantes">Vacantes</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#postulacion" class="btn btn--primary">Postularme</a>
+      </nav>
+    </div>
+  </header>
+
+
+  <!-- ══════════════════════════════════════
+       HERO
+  ══════════════════════════════════════ -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="container">
+      <div class="hero__content">
+        <span class="section-label">Work opportunities with US-based companies</span>
+        <h1 class="hero__title" id="hero-title">
+          Construye tu<br>carrera con <em>4G</em>
+        </h1>
+        <p class="hero__subtitle">
+          Somos un equipo de arquitectos, ingenieros y especialistas BIM que trabajan
+          como extensión de los mejores estudios del mundo.
+          Barranquilla, Colombia.
+        </p>
+        <div class="hero__actions">
+          <a href="#vacantes" class="btn btn--red">Ver vacantes abiertas</a>
+          <a href="#nosotros" class="btn btn--outline" style="border-color:rgba(255,255,255,0.3);color:#fff;">
+            Conocer el equipo
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════
+       STATS BAR
+  ══════════════════════════════════════ -->
+  <section class="stats" aria-label="Datos del equipo">
+    <div class="container">
+      <div class="stats__grid">
+        <div class="stats__item">
+          <strong id="count-vacantes">—</strong>
+          <span>Vacantes abiertas</span>
+        </div>
+        <div class="stats__item">
+          <strong>BIM</strong>
+          <span>Metodología</span>
+        </div>
+        <div class="stats__item">
+          <strong>US</strong>
+          <span>Clientes basados</span>
+        </div>
+        <div class="stats__item">
+          <strong>Bqlla</strong>
+          <span>Barranquilla, COL</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════
+       ¿POR QUÉ 4G?
+  ══════════════════════════════════════ -->
+  <section class="nosotros" id="nosotros" aria-labelledby="nosotros-title">
+    <div class="container">
+      <span class="section-label">El equipo</span>
+      <h2 class="section__title" id="nosotros-title">¿Por qué trabajar en 4G?</h2>
+      <p class="section__subtitle">
+        No somos una empresa tradicional. Trabajamos como parte esencial
+        de los equipos de nuestros clientes alrededor del mundo.
+      </p>
+
+      <div class="nosotros__grid">
+        <div class="nosotros__card">
+          <p class="nosotros__number">01 — Innovación</p>
+          <h3>Tecnología de vanguardia</h3>
+          <p>Trabajamos con metodología BIM y herramientas avanzadas de visualización para ofrecer soluciones precisas y creativas en cada proyecto.</p>
+        </div>
+        <div class="nosotros__card">
+          <p class="nosotros__number">02 — Colaboración</p>
+          <h3>Equipo sin fronteras</h3>
+          <p>Nos integramos como una extensión natural de los equipos de nuestros clientes, con comunicación fluida y objetivos compartidos.</p>
+        </div>
+        <div class="nosotros__card">
+          <p class="nosotros__number">03 — Integridad</p>
+          <h3>Estándares de excelencia</h3>
+          <p>Actuamos con transparencia y compromiso. Cada proyecto se ejecuta bajo los más altos estándares éticos y profesionales.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════
+       VACANTES
+  ══════════════════════════════════════ -->
+  <section class="vacantes" id="vacantes" aria-labelledby="vacantes-title">
+    <div class="container">
+      <span class="section-label">Oportunidades abiertas</span>
+      <h2 class="section__title" id="vacantes-title">Vacantes disponibles</h2>
+      <p class="section__subtitle">
+        Todas las posiciones están ubicadas en Barranquilla, Colombia.
+        Oportunidades de trabajo con empresas basadas en EE.UU.
+      </p>
+
+      <!-- Filtros -->
+      <div class="filtros" role="group" aria-label="Filtrar por área">
+        <button class="filtro-btn active" data-filtro="all">Todas</button>
+        <button class="filtro-btn" data-filtro="arq">Arquitectura</button>
+        <button class="filtro-btn" data-filtro="ing">Ingeniería</button>
+        <button class="filtro-btn" data-filtro="mgmt">Management</button>
+        <button class="filtro-btn" data-filtro="fin">Finanzas</button>
+        <button class="filtro-btn" data-filtro="com">Comercial</button>
+        <button class="filtro-btn" data-filtro="tec">Técnico</button>
+      </div>
+
+      <!-- Las cards se renderizan aquí desde vacantes.js -->
+      <div class="vacantes__lista" id="vacantes-lista" aria-live="polite">
+        <p class="vacantes__loading">Cargando vacantes...</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════
+       POSTULACIÓN — Tally embed
+  ══════════════════════════════════════ -->
+  <section class="postulacion" id="postulacion" aria-labelledby="postulacion-title">
+    <div class="container">
+      <div class="postulacion__inner">
+
+        <!-- Info lateral -->
+        <div class="postulacion__info">
+          <span class="section-label">Aplica ahora</span>
+          <h2 class="section__title" id="postulacion-title">
+            Sube tu CV<br>y cuéntanos<br>quién eres
+          </h2>
+          <p class="section__subtitle">
+            Llena el formulario, adjunta tu hoja de vida y te contactamos si hay una vacante que haga match con tu perfil.
+          </p>
+          <ul class="postulacion__features">
+            <li>Tu información se guarda de forma segura</li>
+            <li>Revisamos cada aplicación personalmente</li>
+            <li>Te respondemos aunque no haya vacante activa</li>
+            <li>Puedes adjuntar tu CV en PDF, Word o compartir un link</li>
+          </ul>
+        </div>
+
+        <!-- Tally.so embed -->
+        <div class="tally-wrapper">
+          <iframe
+            data-tally-src="https://tally.so/embed/vGNyyv?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+            loading="lazy"
+            width="100%"
+            height="809"
+            frameborder="0"
+            marginheight="0"
+            marginwidth="0"
+            style="border:none;"
+            title="Workwithus"
+          ></iframe>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div>
+          <img src="assets/LOGO 4G.png" alt="4G Architecture" class="footer__logo-img" />
+          <p class="footer__copy">&copy; 2026 4G Architecture. Todos los derechos reservados.</p>
+        </div>
+        <nav class="footer__links" aria-label="Links del footer">
+          <a href="https://www.4garchitecture.com" target="_blank" rel="noopener">Sitio web</a>
+          <a href="https://www.4garchitecture.com/about-us" target="_blank" rel="noopener">Nosotros</a>
+          <a href="https://www.4garchitecture.com/services" target="_blank" rel="noopener">Servicios</a>
+          <a href="mailto:workwithus@4garchitecture.com">workwithus@4garchitecture.com</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ══════════════════════════════════════
+       SCRIPTS
+  ══════════════════════════════════════ -->
+
+  <!-- Datos de vacantes — editar este archivo para gestionar posiciones -->
+  <script src="vacantes.js"></script>
+  <!-- Estado de vacantes — generado desde admin.html por RR.HH. -->
+  <script src="vacantes-estado.js"></script>
+
+  <script>
+    // ── Helpers de estado ────────────────────────────────────────
+    function isActiva(v) {
+      if (typeof VACANTES_ESTADO !== 'undefined' && v.id in VACANTES_ESTADO) {
+        return VACANTES_ESTADO[v.id];
+      }
+      return v.activa;
+    }
+
+    function getAllVacantes() {
+      const extra = (typeof VACANTES_EXTRA !== 'undefined' && Array.isArray(VACANTES_EXTRA))
+        ? VACANTES_EXTRA : [];
+      const eliminadas = (typeof VACANTES_ELIMINADAS !== 'undefined' && Array.isArray(VACANTES_ELIMINADAS))
+        ? new Set(VACANTES_ELIMINADAS) : new Set();
+      return [...VACANTES.filter(v => !eliminadas.has(v.id)), ...extra];
+    }
+
+    // ── Renderizado de vacantes ──────────────────────────────────
+    function renderVacantes(filtro) {
+      const lista = document.getElementById('vacantes-lista');
+      const activas = getAllVacantes().filter(v => {
+        if (!isActiva(v)) return false;
+        if (filtro === 'all') return true;
+        return v.area === filtro;
+      });
+
+      if (activas.length === 0) {
+        lista.innerHTML = '<p class="vacantes__empty">No hay vacantes disponibles en esta área por el momento.</p>';
+        return;
+      }
+
+      lista.innerHTML = activas.map(v => `
+        <article class="vacante-card" data-area="${v.area}">
+          <div class="vacante-card__header">
+            <h3 class="vacante-card__titulo">${v.titulo}</h3>
+            <span class="vacante-card__tag vacante-card__tag--${v.area}">${v.areaLabel}</span>
+          </div>
+          ${v.descripcion ? `<p class="vacante-card__desc">${v.descripcion}</p>` : ''}
+          <ul class="vacante-card__req" aria-label="Requisitos">
+            ${v.requisitos.map(r => `<li>${r}</li>`).join('')}
+          </ul>
+          <div class="vacante-card__meta">
+            <span>📍 ${v.ubicacion}</span>
+            <span>💰 ${v.salario}</span>
+          </div>
+          <a href="#postulacion" class="btn btn--outline">Postularme →</a>
+        </article>
+      `).join('');
+    }
+
+    // ── Contador de vacantes en el hero ─────────────────────────
+    function updateCounter() {
+      const total = getAllVacantes().filter(v => isActiva(v)).length;
+      document.getElementById('count-vacantes').textContent = total;
+    }
+
+    // ── Filtros ──────────────────────────────────────────────────
+    const filtrosBtns = document.querySelectorAll('.filtro-btn');
+    filtrosBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filtrosBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        renderVacantes(btn.dataset.filtro);
+      });
+    });
+
+    // ── Init ─────────────────────────────────────────────────────
+    renderVacantes('all');
+    updateCounter();
+  </script>
+
+  <!-- Tally embed loader -->
+  <script>
+    var d=document,w="https://tally.so/widgets/embed.js",
+    v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};
+    if("undefined"!=typeof Tally)v();
+    else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}
+  </script>
+
+</body>
+</html>
