@@ -1,10 +1,12 @@
 // ═══════════════════════════════════════════════════════════════
 //  VACANTES ESTADO — Panel de RR.HH. 4G Architecture
-//  ⚠️  Este archivo se genera automáticamente desde admin.html
-//      No editar manualmente — usar el panel de administración.
+//  ⚠️  Generado automáticamente — no editar manualmente.
+//      Usar el panel de administración: /admin.html
 // ═══════════════════════════════════════════════════════════════
-//  VACANTES_ESTADO : true = activa  |  false = desactivada
-//  VACANTES_EXTRA  : vacantes nuevas creadas desde el admin
+//  VACANTES_ESTADO   : { id: bool }  true = activa | false = inactiva
+//  VACANTES_EXTRA    : vacantes nuevas creadas desde el admin
+//  VACANTES_EDITADAS : ediciones de campos de vacantes base
+//  VACANTES_ELIMINADAS : ids de vacantes base eliminadas
 // ═══════════════════════════════════════════════════════════════
 
 const VACANTES_ESTADO = {
@@ -26,5 +28,7 @@ const VACANTES_ESTADO = {
 };
 
 const VACANTES_EXTRA = [];
+
+const VACANTES_EDITADAS = {};
 
 const VACANTES_ELIMINADAS = [];

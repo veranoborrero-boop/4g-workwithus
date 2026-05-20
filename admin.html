@@ -27,6 +27,8 @@
       --red-light: #f9ecec;
       --green: #1a7a3c;
       --green-light: #eaf4ee;
+      --blue: #0057b7;
+      --blue-light: #e8f0fb;
       --font-heading: 'CenturyGothic', 'Century Gothic', 'AppleGothic', sans-serif;
       --font-body: 'Manrope', system-ui, -apple-system, sans-serif;
       --radius: 8px;
@@ -42,7 +44,7 @@
       min-height: 100vh;
     }
 
-    /* ─── Login overlay ─────────────────────────────────────────── */
+    /* ─── Login overlay ─── */
     #login-overlay {
       position: fixed; inset: 0;
       background: var(--black);
@@ -87,7 +89,7 @@
       font-size: 0.82rem; margin-top: 0.5rem;
     }
 
-    /* ─── Header ────────────────────────────────────────────────── */
+    /* ─── Header ─── */
     .admin-header {
       background: var(--black); padding: 1rem 2rem;
       display: flex; align-items: center; justify-content: space-between;
@@ -115,13 +117,13 @@
     }
     .btn-logout:hover { border-color: rgba(255,255,255,0.5); color: var(--white); }
 
-    /* ─── Main layout ───────────────────────────────────────────── */
+    /* ─── Main layout ─── */
     .admin-main {
-      max-width: 860px; margin: 0 auto;
-      padding: 2rem 1.5rem 6rem;
+      max-width: 900px; margin: 0 auto;
+      padding: 2rem 1.5rem 8rem;
     }
 
-    /* ─── Page title ────────────────────────────────────────────── */
+    /* ─── Page title ─── */
     .admin-title { margin-bottom: 1.5rem; }
     .admin-title h1 {
       font-family: var(--font-heading);
@@ -129,7 +131,7 @@
     }
     .admin-title p { font-size: 0.88rem; color: var(--gray); margin-top: 0.3rem; }
 
-    /* ─── Stats row ─────────────────────────────────────────────── */
+    /* ─── Stats row ─── */
     .stats-row { display: flex; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
     .stat-chip {
       background: var(--white); border-radius: var(--radius);
@@ -144,7 +146,7 @@
     .stat-chip.active strong { color: var(--green); }
     .stat-chip.inactive strong { color: var(--red); }
 
-    /* ─── Toolbar ───────────────────────────────────────────────── */
+    /* ─── Toolbar ─── */
     .toolbar {
       display: flex; gap: 0.75rem; margin-bottom: 1.5rem;
       flex-wrap: wrap; align-items: center;
@@ -175,23 +177,23 @@
     }
     .btn-new:hover { opacity: 0.75; }
 
-    /* ─── Instructions ──────────────────────────────────────────── */
+    /* ─── Instructions ─── */
     .instrucciones {
-      background: #fffbe6; border: 1px solid #f0e060;
+      background: var(--blue-light); border: 1px solid #c0d8f5;
       border-radius: var(--radius); padding: 1rem 1.2rem;
       margin-bottom: 1.5rem;
     }
     .instrucciones h3 {
       font-family: var(--font-heading);
       font-size: 0.8rem; font-weight: 700;
-      margin-bottom: 0.5rem; color: #7a6500;
+      margin-bottom: 0.5rem; color: #003d82;
     }
     .instrucciones ol {
       padding-left: 1.2rem;
-      font-size: 0.82rem; color: #5a4d00; line-height: 1.7;
+      font-size: 0.82rem; color: #004494; line-height: 1.8;
     }
 
-    /* ─── Area section ──────────────────────────────────────────── */
+    /* ─── Area section ─── */
     .area-section { margin-bottom: 1.5rem; }
     .area-section__header {
       display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.75rem;
@@ -203,10 +205,10 @@
     }
     .area-section__line { flex: 1; height: 1px; background: #e0e0e0; }
 
-    /* ─── Vacante row ───────────────────────────────────────────── */
+    /* ─── Vacante row ─── */
     .vacante-row {
       background: var(--white); border-radius: var(--radius);
-      padding: 1rem 1.2rem;
+      padding: 0.9rem 1.2rem;
       display: flex; align-items: center; justify-content: space-between;
       gap: 1rem; box-shadow: var(--shadow); margin-bottom: 0.6rem;
       border-left: 3px solid transparent; transition: border-color 0.2s, opacity 0.2s;
@@ -219,10 +221,18 @@
     .vacante-row__info { flex: 1; min-width: 0; }
     .vacante-row__titulo {
       font-family: var(--font-heading);
-      font-size: 0.95rem; font-weight: 700;
+      font-size: 0.92rem; font-weight: 700;
       white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+      display: flex; align-items: center; gap: 0.5rem;
     }
-    .vacante-row__meta { font-size: 0.78rem; color: var(--gray); margin-top: 0.15rem; }
+    .codigo-badge-small {
+      font-size: 0.65rem; font-weight: 700; font-family: monospace;
+      color: var(--gray); background: var(--gray-light);
+      border: 1px solid #e0e0e0;
+      padding: 0.1rem 0.45rem; border-radius: 3px;
+      letter-spacing: 0.05em; flex-shrink: 0;
+    }
+    .vacante-row__meta { font-size: 0.76rem; color: var(--gray); margin-top: 0.15rem; }
 
     .vacante-row__right {
       display: flex; align-items: center; gap: 0.75rem; flex-shrink: 0;
@@ -251,7 +261,7 @@
     }
     .btn-delete:hover { color: var(--red); }
 
-    /* ─── Toggle switch ─────────────────────────────────────────── */
+    /* ─── Toggle switch ─── */
     .toggle {
       position: relative; width: 44px; height: 24px; flex-shrink: 0;
     }
@@ -271,7 +281,7 @@
     }
     .toggle input:checked ~ .toggle__thumb { transform: translateX(20px); }
 
-    /* ─── Download bar ──────────────────────────────────────────── */
+    /* ─── Download bar ─── */
     .download-bar {
       position: fixed; bottom: 0; left: 0; right: 0;
       background: var(--white); border-top: 1px solid #e0e0e0;
@@ -283,8 +293,10 @@
     }
     .download-bar__info { font-size: 0.85rem; color: var(--gray-dark); }
     .download-bar__info span { font-weight: 700; color: var(--black); }
-    .btn-download {
-      background: var(--red); color: var(--white);
+    .download-bar__actions { display: flex; gap: 0.75rem; align-items: center; flex-wrap: wrap; }
+
+    .btn-publish {
+      background: var(--green); color: var(--white);
       border: none; padding: 0.75rem 1.5rem;
       border-radius: var(--radius);
       font-family: var(--font-heading);
@@ -292,9 +304,21 @@
       cursor: pointer; display: flex; align-items: center; gap: 0.5rem;
       transition: opacity 0.2s;
     }
-    .btn-download:hover { opacity: 0.88; }
+    .btn-publish:hover { opacity: 0.88; }
+    .btn-publish:disabled { opacity: 0.5; cursor: not-allowed; }
 
-    /* ─── Modal backdrop ────────────────────────────────────────── */
+    .btn-download {
+      background: none; color: var(--gray-dark);
+      border: 1.5px solid #e0e0e0; padding: 0.7rem 1.1rem;
+      border-radius: var(--radius);
+      font-family: var(--font-body);
+      font-size: 0.82rem; font-weight: 600;
+      cursor: pointer; display: flex; align-items: center; gap: 0.4rem;
+      transition: all 0.18s;
+    }
+    .btn-download:hover { border-color: var(--black); color: var(--black); }
+
+    /* ─── Modal backdrop ─── */
     .modal-backdrop {
       position: fixed; inset: 0;
       background: rgba(0,0,0,0.55);
@@ -305,12 +329,12 @@
     }
     .modal-backdrop.open { opacity: 1; pointer-events: all; }
 
-    /* ─── Modal box ─────────────────────────────────────────────── */
+    /* ─── Modal box ─── */
     .modal {
       background: var(--white);
       border-radius: 12px;
-      width: 100%; max-width: 600px;
-      max-height: 90vh; overflow-y: auto;
+      width: 100%; max-width: 640px;
+      max-height: 92vh; overflow-y: auto;
       box-shadow: 0 8px 40px rgba(0,0,0,0.25);
       transform: translateY(16px);
       transition: transform 0.2s;
@@ -359,12 +383,32 @@
     .form-group textarea { resize: vertical; min-height: 80px; line-height: 1.5; }
 
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form-row-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; }
+
+    /* Salary type toggle */
+    .salary-type-row {
+      display: flex; gap: 0.4rem; margin-bottom: 0.6rem;
+    }
+    .salary-type-btn {
+      font-family: var(--font-body); font-size: 0.78rem; font-weight: 600;
+      padding: 0.3rem 0.85rem; border-radius: var(--radius);
+      border: 1.5px solid #e0e0e0; background: var(--white);
+      color: var(--gray-dark); cursor: pointer; transition: all 0.15s;
+    }
+    .salary-type-btn.active {
+      background: var(--black); border-color: var(--black); color: var(--white);
+    }
+
+    .salary-range-row {
+      display: grid; grid-template-columns: 1fr auto 1fr; gap: 0.5rem; align-items: center;
+    }
+    .salary-range-sep {
+      color: var(--gray); font-size: 0.9rem; text-align: center;
+    }
 
     /* Requisitos dinámicos */
     .req-list { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 0.5rem; }
-    .req-item {
-      display: flex; gap: 0.5rem; align-items: center;
-    }
+    .req-item { display: flex; gap: 0.5rem; align-items: center; }
     .req-item input {
       flex: 1; padding: 0.5rem 0.75rem;
       border: 1.5px solid #e0e0e0; border-radius: var(--radius);
@@ -410,7 +454,7 @@
     }
     .btn-save:hover { opacity: 0.75; }
 
-    /* ─── Delete confirm dialog ─────────────────────────────────── */
+    /* ─── Delete confirm dialog ─── */
     .confirm-backdrop {
       position: fixed; inset: 0;
       background: rgba(0,0,0,0.45);
@@ -442,9 +486,40 @@
     }
     .btn-confirm-ok:hover { opacity: 0.85; }
 
-    /* ─── Toast ─────────────────────────────────────────────────── */
+    /* ─── Token modal ─── */
+    .token-modal {
+      background: var(--white); border-radius: 12px;
+      width: 100%; max-width: 480px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.25);
+      padding: 1.75rem;
+    }
+    .token-modal h2 {
+      font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+    .token-modal p {
+      font-size: 0.83rem; color: var(--gray-dark); margin-bottom: 1.25rem; line-height: 1.6;
+    }
+    .token-modal input {
+      width: 100%; padding: 0.7rem 0.9rem;
+      border: 1.5px solid #e0e0e0; border-radius: var(--radius);
+      font-family: monospace; font-size: 0.85rem;
+      outline: none; margin-bottom: 1rem;
+      transition: border-color 0.2s;
+    }
+    .token-modal input:focus { border-color: var(--green); }
+    .token-modal__btns { display: flex; gap: 0.75rem; justify-content: flex-end; }
+    .token-steps {
+      background: var(--gray-light); border-radius: var(--radius);
+      padding: 0.85rem 1rem; margin-bottom: 1rem;
+      font-size: 0.78rem; color: var(--gray-dark); line-height: 1.8;
+    }
+    .token-steps ol { padding-left: 1.2rem; }
+    .token-steps a { color: var(--blue); text-decoration: underline; }
+
+    /* ─── Toast ─── */
     #toast {
-      position: fixed; bottom: 5rem; left: 50%;
+      position: fixed; bottom: 5.5rem; left: 50%;
       transform: translateX(-50%) translateY(1rem);
       background: var(--black); color: var(--white);
       padding: 0.65rem 1.2rem; border-radius: var(--radius);
@@ -452,16 +527,20 @@
       opacity: 0; pointer-events: none;
       transition: opacity 0.25s, transform 0.25s;
       white-space: nowrap; z-index: 200;
+      max-width: calc(100vw - 2rem); white-space: normal; text-align: center;
     }
     #toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+    #toast.success { background: var(--green); }
+    #toast.error { background: var(--red); }
 
-    /* ─── Responsive ────────────────────────────────────────────── */
+    /* ─── Responsive ─── */
     @media (max-width: 600px) {
-      .admin-main { padding: 1.5rem 1rem 6rem; }
-      .form-row { grid-template-columns: 1fr; }
+      .admin-main { padding: 1.5rem 1rem 8rem; }
+      .form-row, .form-row-3 { grid-template-columns: 1fr; }
       .vacante-row { flex-wrap: wrap; }
       .download-bar { flex-direction: column; align-items: stretch; }
-      .btn-download { justify-content: center; }
+      .download-bar__actions { flex-direction: column; }
+      .btn-publish, .btn-download { justify-content: center; }
       .btn-new { margin-left: 0; }
     }
   </style>
@@ -494,16 +573,15 @@
 
     <div class="admin-title">
       <h1>Gestión de Vacantes</h1>
-      <p>Activa, desactiva o crea vacantes. Descarga y sube el archivo al servidor para publicar.</p>
+      <p>Activa, desactiva, crea o edita vacantes. Publica los cambios con un clic.</p>
     </div>
 
     <div class="instrucciones">
       <h3>¿Cómo funciona?</h3>
       <ol>
-        <li>Usa los toggles para activar o desactivar vacantes. Usa <strong>"+ Nueva vacante"</strong> para crear una.</li>
-        <li>Cuando termines, haz clic en <strong>"Descargar vacantes-estado.js"</strong>.</li>
-        <li>Sube el archivo descargado al servidor (misma carpeta que index.html), reemplazando el anterior.</li>
-        <li>Refresca la web pública para verificar los cambios.</li>
+        <li>Usa los <strong>toggles</strong> para activar o desactivar vacantes. Usa <strong>"+ Nueva vacante"</strong> para crear una.</li>
+        <li>Cuando termines, haz clic en <strong>"Publicar en la web"</strong>. Los cambios aparecen en el sitio en ~1 minuto.</li>
+        <li><em>Primera vez:</em> se te pedirá un token de GitHub (una sola vez — queda guardado).</li>
       </ol>
     </div>
 
@@ -525,11 +603,16 @@
   <!-- ── Download bar ── -->
   <div class="download-bar" id="download-bar" style="display:none">
     <div class="download-bar__info">
-      <span id="dl-active-count">—</span> vacantes activas listas para publicar
+      <span id="dl-active-count">—</span> vacantes activas
     </div>
-    <button class="btn-download" onclick="descargarEstado()">
-      ↓ Descargar vacantes-estado.js
-    </button>
+    <div class="download-bar__actions">
+      <button class="btn-download" onclick="descargarEstado()" title="Descarga el archivo como respaldo">
+        ↓ Descargar archivo
+      </button>
+      <button class="btn-publish" id="btn-publish" onclick="publicarCambios()">
+        ✓ Publicar en la web
+      </button>
+    </div>
   </div>
 
   <!-- ── Modal nueva/editar vacante ── -->
@@ -547,6 +630,13 @@
             <input type="text" id="f-titulo" placeholder="Ej: Arquitecto Senior" />
           </div>
           <div class="form-group">
+            <label for="f-codigo">Código <span class="opt">(único, ej: ARQ-004)</span></label>
+            <input type="text" id="f-codigo" placeholder="ARQ-004" style="text-transform:uppercase" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
             <label for="f-area">Área</label>
             <select id="f-area">
               <option value="arq">Arquitectura</option>
@@ -557,16 +647,31 @@
               <option value="tec">Técnico</option>
             </select>
           </div>
+          <div class="form-group">
+            <label for="f-modalidad">Modalidad</label>
+            <select id="f-modalidad">
+              <option value="Presencial">Presencial (Barranquilla)</option>
+              <option value="Remoto">Remoto</option>
+              <option value="Híbrido">Híbrido</option>
+            </select>
+          </div>
         </div>
 
-        <div class="form-row">
-          <div class="form-group">
-            <label for="f-salario">Salario</label>
+        <div class="form-group">
+          <label>Salario</label>
+          <div class="salary-type-row">
+            <button type="button" class="salary-type-btn active" id="btn-sal-fijo" onclick="setSalarioTipo('fijo')">Fijo</button>
+            <button type="button" class="salary-type-btn" id="btn-sal-rango" onclick="setSalarioTipo('rango')">Rango</button>
+          </div>
+          <div id="sal-fijo-wrap">
             <input type="text" id="f-salario" placeholder="Ej: $3.5 MM COP" />
           </div>
-          <div class="form-group">
-            <label for="f-ubicacion">Ubicación</label>
-            <input type="text" id="f-ubicacion" placeholder="Barranquilla" value="Barranquilla" />
+          <div id="sal-rango-wrap" style="display:none">
+            <div class="salary-range-row">
+              <input type="text" id="f-salario-min" placeholder="Mín: $2.5 MM COP" />
+              <span class="salary-range-sep">—</span>
+              <input type="text" id="f-salario-max" placeholder="Máx: $4.0 MM COP" />
+            </div>
           </div>
         </div>
 
@@ -601,9 +706,28 @@
     </div>
   </div>
 
+  <!-- ── Token modal ── -->
+  <div class="modal-backdrop" id="token-backdrop" onclick="handleTokenBackdropClick(event)">
+    <div class="token-modal" role="dialog" aria-modal="true">
+      <h2>Conectar con GitHub</h2>
+      <p>Para publicar directamente en el sitio, necesitas un token personal de GitHub con permiso de escritura en el repositorio.</p>
+      <div class="token-steps">
+        <ol>
+          <li>Ve a <a href="https://github.com/settings/tokens/new" target="_blank">github.com/settings/tokens/new</a></li>
+          <li>Selecciona <strong>repo</strong> (acceso completo al repositorio)</li>
+          <li>Copia el token generado y pégalo aquí</li>
+        </ol>
+      </div>
+      <input type="password" id="token-input" placeholder="ghp_xxxxxxxxxxxxxxxx" autocomplete="off" />
+      <div class="token-modal__btns">
+        <button class="btn-cancel" onclick="closeTokenModal()">Cancelar</button>
+        <button class="btn-save" onclick="guardarToken()">Guardar y publicar</button>
+      </div>
+    </div>
+  </div>
+
   <!-- ── Toast ── -->
   <div id="toast"></div>
-
 
   <!-- Scripts de datos -->
   <script src="vacantes.js"></script>
@@ -653,25 +777,26 @@
     };
     const AREA_ORDER = ['arq', 'ing', 'mgmt', 'fin', 'com', 'tec'];
 
-    let estado = {};         // { id: bool }
-    let nuevasVacantes = []; // vacantes creadas en el admin
-    let eliminadas = new Set(); // ids de vacantes base eliminadas
-    let editingId = null;    // id de la vacante en edición (null = nueva)
+    let estado = {};          // { id: bool }
+    let nuevasVacantes = [];  // vacantes creadas en el admin
+    let editadasBase = {};    // { id: { overrides } } para vacantes base editadas
+    let eliminadas = new Set();
+    let editingId = null;
     let deleteTargetId = null;
 
     function initEstado() {
-      // Restore deleted base vacantes
       if (typeof VACANTES_ELIMINADAS !== 'undefined' && Array.isArray(VACANTES_ELIMINADAS)) {
         VACANTES_ELIMINADAS.forEach(id => eliminadas.add(id));
       }
-      // Existing vacantes (skip deleted ones)
+      if (typeof VACANTES_EDITADAS !== 'undefined' && typeof VACANTES_EDITADAS === 'object') {
+        editadasBase = Object.assign({}, VACANTES_EDITADAS);
+      }
       VACANTES.forEach(v => {
         if (eliminadas.has(v.id)) return;
         estado[v.id] = (typeof VACANTES_ESTADO !== 'undefined' && v.id in VACANTES_ESTADO)
           ? VACANTES_ESTADO[v.id]
           : v.activa;
       });
-      // Restore new vacantes created previously
       if (typeof VACANTES_EXTRA !== 'undefined' && Array.isArray(VACANTES_EXTRA)) {
         nuevasVacantes = VACANTES_EXTRA.map(v => ({ ...v }));
         nuevasVacantes.forEach(v => {
@@ -686,6 +811,11 @@
       return [...VACANTES.filter(v => !eliminadas.has(v.id)), ...nuevasVacantes];
     }
 
+    function getDisplayVacante(v) {
+      if (editadasBase[v.id]) return Object.assign({}, v, editadasBase[v.id]);
+      return v;
+    }
+
     // ════════════════════════════════════════════════════════════
     //  RENDER
     // ════════════════════════════════════════════════════════════
@@ -697,23 +827,19 @@
       AREA_ORDER.forEach(area => {
         const vacantes = all.filter(v => v.area === area);
         if (!vacantes.length) return;
-
         html += `<div class="area-section">
           <div class="area-section__header">
             <span class="area-section__title">${AREA_META[area].label}</span>
             <div class="area-section__line"></div>
           </div>`;
-
         vacantes.forEach(v => {
           const isOn = estado[v.id];
           const isNew = nuevasVacantes.some(n => n.id === v.id);
           html += buildRow(v, isOn, isNew);
         });
-
         html += '</div>';
       });
 
-      // Vacantes sin área reconocida (por si acaso)
       const unclassified = getAllVacantes().filter(v => !AREA_ORDER.includes(v.area));
       if (unclassified.length) {
         html += `<div class="area-section">
@@ -732,12 +858,21 @@
     }
 
     function buildRow(v, isOn, isNew) {
+      const dv = getDisplayVacante(v);
       const rowClass = `vacante-row ${isOn ? 'is-active' : 'is-inactive'} ${isNew ? 'is-new' : ''}`;
+      const codigoBadge = dv.codigo
+        ? `<span class="codigo-badge-small">${escHtml(dv.codigo)}</span>` : '';
+      const nuevaTag = isNew
+        ? `<span style="font-size:0.65rem;font-weight:400;color:#b06000;font-family:var(--font-body);">nueva</span>` : '';
       return `
         <div class="${rowClass}" id="row-${v.id}">
           <div class="vacante-row__info">
-            <div class="vacante-row__titulo">${v.titulo}${isNew ? ' <span style="font-size:0.68rem;font-weight:400;color:#b06000;font-family:var(--font-body);">nueva</span>' : ''}</div>
-            <div class="vacante-row__meta">${v.salario} · ${v.ubicacion}</div>
+            <div class="vacante-row__titulo">
+              ${codigoBadge}
+              ${escHtml(dv.titulo)}
+              ${nuevaTag}
+            </div>
+            <div class="vacante-row__meta">${escHtml(dv.salario)} · ${escHtml(dv.modalidad || dv.ubicacion || '')}</div>
           </div>
           <div class="vacante-row__right">
             <span class="vacante-row__status ${isOn ? 'on' : 'off'}" id="status-${v.id}">
@@ -753,6 +888,10 @@
             </label>
           </div>
         </div>`;
+    }
+
+    function escHtml(str) {
+      return String(str || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
     }
 
     function updateStats() {
@@ -789,34 +928,74 @@
     }
 
     // ════════════════════════════════════════════════════════════
+    //  SALARY TYPE TOGGLE
+    // ════════════════════════════════════════════════════════════
+    let salarioTipo = 'fijo';
+
+    function setSalarioTipo(tipo) {
+      salarioTipo = tipo;
+      document.getElementById('btn-sal-fijo').classList.toggle('active', tipo === 'fijo');
+      document.getElementById('btn-sal-rango').classList.toggle('active', tipo === 'rango');
+      document.getElementById('sal-fijo-wrap').style.display = tipo === 'fijo' ? '' : 'none';
+      document.getElementById('sal-rango-wrap').style.display = tipo === 'rango' ? '' : 'none';
+    }
+
+    function getSalarioValue() {
+      if (salarioTipo === 'fijo') {
+        return document.getElementById('f-salario').value.trim();
+      } else {
+        const min = document.getElementById('f-salario-min').value.trim();
+        const max = document.getElementById('f-salario-max').value.trim();
+        if (min && max) return `${min} – ${max}`;
+        return min || max || '';
+      }
+    }
+
+    function setSalarioFromValue(salario) {
+      if (salario && salario.includes('–')) {
+        const parts = salario.split('–').map(s => s.trim());
+        setSalarioTipo('rango');
+        document.getElementById('f-salario-min').value = parts[0] || '';
+        document.getElementById('f-salario-max').value = parts[1] || '';
+      } else {
+        setSalarioTipo('fijo');
+        document.getElementById('f-salario').value = salario || '';
+      }
+    }
+
+    // ════════════════════════════════════════════════════════════
     //  MODAL — Nueva / Editar
     // ════════════════════════════════════════════════════════════
     function openModal(id) {
       editingId = id || null;
       document.getElementById('modal-title').textContent = id ? 'Editar vacante' : 'Nueva vacante';
 
-      // Reset
+      // Reset form
       document.getElementById('f-titulo').value = '';
+      document.getElementById('f-codigo').value = '';
       document.getElementById('f-area').value = 'arq';
-      document.getElementById('f-salario').value = '';
-      document.getElementById('f-ubicacion').value = 'Barranquilla';
+      document.getElementById('f-modalidad').value = 'Presencial';
       document.getElementById('f-descripcion').value = '';
       document.getElementById('req-list').innerHTML = '';
+      setSalarioTipo('fijo');
+      document.getElementById('f-salario').value = '';
+      document.getElementById('f-salario-min').value = '';
+      document.getElementById('f-salario-max').value = '';
 
       if (id) {
-        // Populate with existing data
         const all = getAllVacantes();
         const v = all.find(x => x.id === id);
         if (v) {
-          document.getElementById('f-titulo').value = v.titulo;
-          document.getElementById('f-area').value = v.area;
-          document.getElementById('f-salario').value = v.salario;
-          document.getElementById('f-ubicacion').value = v.ubicacion;
-          document.getElementById('f-descripcion').value = v.descripcion || '';
-          (v.requisitos || []).forEach(r => addReqItem(r));
+          const dv = getDisplayVacante(v);
+          document.getElementById('f-titulo').value = dv.titulo || '';
+          document.getElementById('f-codigo').value = dv.codigo || '';
+          document.getElementById('f-area').value = dv.area || 'arq';
+          document.getElementById('f-modalidad').value = dv.modalidad || 'Presencial';
+          document.getElementById('f-descripcion').value = dv.descripcion || '';
+          setSalarioFromValue(dv.salario || '');
+          (dv.requisitos || []).forEach(r => addReqItem(r));
         }
       } else {
-        // Start with 3 empty requisito fields
         addReqItem(''); addReqItem(''); addReqItem('');
       }
 
@@ -834,7 +1013,6 @@
       if (e.target === document.getElementById('modal-backdrop')) closeModal();
     }
 
-    // Requisitos
     function addReqItem(text) {
       const list = document.getElementById('req-list');
       const div = document.createElement('div');
@@ -846,55 +1024,59 @@
       if (text === '') div.querySelector('input').focus();
     }
 
-    function escHtml(str) {
-      return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-    }
-
     function slugify(str) {
       return str.toLowerCase()
-        .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+        .normalize('NFD').replace(/[̀-ͯ]/g, '')
         .replace(/[^a-z0-9]+/g, '-')
         .replace(/^-|-$/g, '');
     }
 
     function saveVacante() {
-      const titulo = document.getElementById('f-titulo').value.trim();
-      const area = document.getElementById('f-area').value;
-      const salario = document.getElementById('f-salario').value.trim();
-      const ubicacion = document.getElementById('f-ubicacion').value.trim() || 'Barranquilla';
+      const titulo    = document.getElementById('f-titulo').value.trim();
+      const codigo    = document.getElementById('f-codigo').value.trim().toUpperCase();
+      const area      = document.getElementById('f-area').value;
+      const modalidad = document.getElementById('f-modalidad').value;
+      const salario   = getSalarioValue();
       const descripcion = document.getElementById('f-descripcion').value.trim();
       const reqInputs = document.querySelectorAll('#req-list .req-item input');
       const requisitos = Array.from(reqInputs).map(i => i.value.trim()).filter(Boolean);
 
-      if (!titulo) { showToast('El nombre del cargo es obligatorio'); document.getElementById('f-titulo').focus(); return; }
-      if (!salario) { showToast('El salario es obligatorio'); document.getElementById('f-salario').focus(); return; }
+      if (!titulo)   { showToast('El nombre del cargo es obligatorio'); document.getElementById('f-titulo').focus(); return; }
+      if (!salario)  { showToast('El salario es obligatorio'); return; }
       if (requisitos.length === 0) { showToast('Agrega al menos un requisito'); return; }
 
+      const ubicacion = (modalidad === 'Presencial' || modalidad === 'Híbrido') ? 'Barranquilla' : '';
+
       if (editingId) {
-        // Update existing new vacante
-        const idx = nuevasVacantes.findIndex(v => v.id === editingId);
-        if (idx !== -1) {
-          nuevasVacantes[idx] = {
-            ...nuevasVacantes[idx],
-            titulo, area, areaLabel: AREA_META[area].label,
-            salario, ubicacion,
-            ...(descripcion ? { descripcion } : {}),
+        const isNueva = nuevasVacantes.some(v => v.id === editingId);
+        if (isNueva) {
+          const idx = nuevasVacantes.findIndex(v => v.id === editingId);
+          if (idx !== -1) {
+            nuevasVacantes[idx] = {
+              ...nuevasVacantes[idx],
+              titulo, codigo, area, areaLabel: AREA_META[area].label,
+              modalidad, ubicacion, salario,
+              descripcion: descripcion || undefined,
+              requisitos
+            };
+          }
+        } else {
+          // Edit base vacante — store as override
+          editadasBase[editingId] = {
+            titulo, codigo, area, areaLabel: AREA_META[area].label,
+            modalidad, ubicacion, salario,
+            descripcion: descripcion || '',
             requisitos
           };
-        } else {
-          // Editing a base vacante — only allowed from nuevasVacantes for structural edits
-          // For base vacantes, we only update if it's a nueva
         }
         showToast('Vacante actualizada');
       } else {
-        // New vacante
         const id = slugify(titulo) + '-' + Date.now().toString(36);
         const vacante = {
-          id, titulo,
+          id, titulo, codigo,
           area, areaLabel: AREA_META[area].label,
-          ubicacion, salario,
-          activa: true,
-          requisitos
+          modalidad, ubicacion, salario,
+          activa: true, requisitos
         };
         if (descripcion) vacante.descripcion = descripcion;
         nuevasVacantes.push(vacante);
@@ -912,9 +1094,9 @@
     function askDelete(id, isNew) {
       const all = getAllVacantes();
       const v = all.find(x => x.id === id) || VACANTES.find(x => x.id === id);
-      const nombre = v ? v.titulo : id;
+      const dv = v ? getDisplayVacante(v) : v;
       document.getElementById('confirm-msg').textContent =
-        `Se eliminará "${nombre}" del sistema. No aparecerá en la web.`;
+        `Se eliminará "${dv ? dv.titulo : id}" del sistema. No aparecerá en la web.`;
       deleteTargetId = id;
       document.getElementById('confirm-backdrop').classList.add('open');
     }
@@ -928,11 +1110,10 @@
       if (!deleteTargetId) return;
       const isNew = nuevasVacantes.some(v => v.id === deleteTargetId);
       if (isNew) {
-        // Remove from nuevasVacantes completely
         nuevasVacantes = nuevasVacantes.filter(v => v.id !== deleteTargetId);
       } else {
-        // Mark base vacante as eliminated
         eliminadas.add(deleteTargetId);
+        delete editadasBase[deleteTargetId];
       }
       delete estado[deleteTargetId];
       closeConfirm();
@@ -941,23 +1122,18 @@
     }
 
     // ════════════════════════════════════════════════════════════
-    //  DOWNLOAD
+    //  GENERATE FILE CONTENT
     // ════════════════════════════════════════════════════════════
-    function descargarEstado() {
+    function generarContenido() {
       const now = new Date().toLocaleString('es-CO', { timeZone: 'America/Bogota' });
-
-      // Estado lines (all vacantes, existing + new)
       const estadoLines = Object.entries(estado)
         .map(([id, val]) => `  "${id}": ${val}`)
         .join(',\n');
-
-      // Extra vacantes JSON
-      const extraJson = JSON.stringify(nuevasVacantes, null, 2);
-      // Eliminated base vacantes
+      const extraJson     = JSON.stringify(nuevasVacantes, null, 2);
+      const editadasJson  = JSON.stringify(editadasBase, null, 2);
       const eliminadasJson = JSON.stringify([...eliminadas]);
 
-      const contenido =
-`// ═══════════════════════════════════════════════════════════════
+      return `// ═══════════════════════════════════════════════════════════════
 //  VACANTES ESTADO — Panel de RR.HH. 4G Architecture
 //  ⚠️  Generado automáticamente — no editar manualmente.
 //  Última actualización: ${now}
@@ -969,9 +1145,17 @@ ${estadoLines}
 
 const VACANTES_EXTRA = ${extraJson};
 
+const VACANTES_EDITADAS = ${editadasJson};
+
 const VACANTES_ELIMINADAS = ${eliminadasJson};
 `;
+    }
 
+    // ════════════════════════════════════════════════════════════
+    //  DOWNLOAD (respaldo)
+    // ════════════════════════════════════════════════════════════
+    function descargarEstado() {
+      const contenido = generarContenido();
       const blob = new Blob([contenido], { type: 'text/javascript' });
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
@@ -979,19 +1163,126 @@ const VACANTES_ELIMINADAS = ${eliminadasJson};
       a.download = 'vacantes-estado.js';
       a.click();
       URL.revokeObjectURL(url);
-      showToast('Archivo descargado. Súbelo al servidor para publicar los cambios.');
+      showToast('Archivo descargado como respaldo.');
     }
+
+    // ════════════════════════════════════════════════════════════
+    //  GITHUB API — Publicar directamente
+    // ════════════════════════════════════════════════════════════
+    const GH_REPO   = 'veranoborrero-boop/4g-workwithus';
+    const GH_BRANCH = 'main';
+    const GH_FILE   = 'vacantes-estado.js';
+
+    async function publicarCambios() {
+      const token = localStorage.getItem('4g_gh_token');
+      if (!token) {
+        openTokenModal();
+        return;
+      }
+      await _doPublish(token);
+    }
+
+    async function _doPublish(token) {
+      const btn = document.getElementById('btn-publish');
+      btn.disabled = true;
+      btn.textContent = 'Publicando...';
+
+      try {
+        // 1. Obtener SHA del archivo actual
+        const getRes = await fetch(
+          `https://api.github.com/repos/${GH_REPO}/contents/${GH_FILE}?ref=${GH_BRANCH}`,
+          { headers: { 'Authorization': `Bearer ${token}`, 'Accept': 'application/vnd.github.v3+json' } }
+        );
+
+        if (!getRes.ok) {
+          if (getRes.status === 401 || getRes.status === 403) {
+            localStorage.removeItem('4g_gh_token');
+            showToast('Token inválido o expirado. Ingresa uno nuevo.', 'error');
+            openTokenModal();
+            return;
+          }
+          throw new Error(`Error al obtener archivo (${getRes.status})`);
+        }
+
+        const fileData = await getRes.json();
+        const sha = fileData.sha;
+
+        // 2. Codificar contenido en base64
+        const contenido = generarContenido();
+        const contentB64 = btoa(unescape(encodeURIComponent(contenido)));
+
+        // 3. Hacer commit
+        const putRes = await fetch(
+          `https://api.github.com/repos/${GH_REPO}/contents/${GH_FILE}`,
+          {
+            method: 'PUT',
+            headers: {
+              'Authorization': `Bearer ${token}`,
+              'Accept': 'application/vnd.github.v3+json',
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              message: `Admin RR.HH.: actualizar estado de vacantes — ${new Date().toLocaleString('es-CO')}`,
+              content: contentB64,
+              sha,
+              branch: GH_BRANCH
+            })
+          }
+        );
+
+        if (!putRes.ok) {
+          const errData = await putRes.json().catch(() => ({}));
+          throw new Error(`Error ${putRes.status}: ${errData.message || 'desconocido'}`);
+        }
+
+        showToast('¡Cambios publicados! El sitio se actualizará en ~1 minuto.', 'success');
+      } catch (err) {
+        showToast(`Error al publicar: ${err.message}`, 'error');
+        console.error(err);
+      } finally {
+        btn.disabled = false;
+        btn.textContent = '✓ Publicar en la web';
+      }
+    }
+
+    // ════════════════════════════════════════════════════════════
+    //  TOKEN MODAL
+    // ════════════════════════════════════════════════════════════
+    function openTokenModal() {
+      document.getElementById('token-backdrop').classList.add('open');
+      setTimeout(() => document.getElementById('token-input').focus(), 100);
+    }
+
+    function closeTokenModal() {
+      document.getElementById('token-backdrop').classList.remove('open');
+    }
+
+    function handleTokenBackdropClick(e) {
+      if (e.target === document.getElementById('token-backdrop')) closeTokenModal();
+    }
+
+    async function guardarToken() {
+      const token = document.getElementById('token-input').value.trim();
+      if (!token) { showToast('Ingresa un token válido'); return; }
+      localStorage.setItem('4g_gh_token', token);
+      closeTokenModal();
+      await _doPublish(token);
+    }
+
+    document.getElementById('token-input').addEventListener('keydown', e => {
+      if (e.key === 'Enter') guardarToken();
+    });
 
     // ════════════════════════════════════════════════════════════
     //  TOAST
     // ════════════════════════════════════════════════════════════
     let toastTimeout;
-    function showToast(msg) {
+    function showToast(msg, type) {
       const t = document.getElementById('toast');
       t.textContent = msg;
-      t.classList.add('show');
+      t.className = 'show' + (type ? ' ' + type : '');
       clearTimeout(toastTimeout);
-      toastTimeout = setTimeout(() => t.classList.remove('show'), 3000);
+      toastTimeout = setTimeout(() => { t.className = ''; }, 4000);
     }
 
     // ════════════════════════════════════════════════════════════

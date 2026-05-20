@@ -3,11 +3,10 @@
 //  Archivo de gestión de posiciones — Equipo de Recursos Humanos
 // ═══════════════════════════════════════════════════════════════
 //
-//  CÓMO USAR:
-//  • Para CERRAR una vacante: cambia  activa: true  →  activa: false
-//  • Para ABRIR una vacante:  cambia  activa: false →  activa: true
-//  • Para AGREGAR un cargo nuevo: copia el bloque de un cargo existente
-//    y ajusta los datos. Asegúrate de que el id sea único.
+//  NOTA: Las ediciones de campo se gestionan desde admin.html.
+//  Los nuevos campos disponibles son:
+//    codigo    → Código único de la vacante (ej: ARQ-001)
+//    modalidad → "Presencial" | "Remoto" | "Híbrido"
 //
 //  ÁREAS DISPONIBLES (campo "area"):
 //    "arq"  → Arquitectura
@@ -23,9 +22,11 @@ const VACANTES = [
 
   {
     id: "technician-junior",
+    codigo: "TEC-001",
     titulo: "Technician Junior",
     area: "tec",
     areaLabel: "Técnico",
+    modalidad: "Presencial",
     ubicacion: "Barranquilla",
     salario: "$1.8 MM COP",
     activa: true,
@@ -39,9 +40,11 @@ const VACANTES = [
 
   {
     id: "bi-analyst",
+    codigo: "FIN-001",
     titulo: "Business Intelligence Analyst",
     area: "fin",
     areaLabel: "Finanzas",
+    modalidad: "Presencial",
     ubicacion: "Barranquilla",
     salario: "$5.0 MM COP",
     activa: true,
@@ -58,9 +61,11 @@ const VACANTES = [
 
   {
     id: "project-manager-senior",
+    codigo: "MGT-001",
     titulo: "Project Manager Senior",
     area: "mgmt",
     areaLabel: "Management",
+    modalidad: "Presencial",
     ubicacion: "Barranquilla",
     salario: "$7.0 MM COP",
     activa: true,
@@ -75,9 +80,11 @@ const VACANTES = [
 
   {
     id: "consultant-senior",
+    codigo: "ARQ-001",
     titulo: "Consultant Senior",
     area: "arq",
     areaLabel: "Arquitectura",
+    modalidad: "Presencial",
     ubicacion: "Barranquilla",
     salario: "$6.8 MM COP",
     activa: true,
@@ -93,9 +100,11 @@ const VACANTES = [
 
   {
     id: "cfo",
+    codigo: "FIN-002",
     titulo: "CFO / Director Financiero",
     area: "fin",
     areaLabel: "Finanzas",
+    modalidad: "Presencial",
     ubicacion: "Barranquilla",
     salario: "$15 MM COP",
     activa: false,
@@ -112,9 +121,11 @@ const VACANTES = [
 
   {
     id: "contador-proyectos",
+    codigo: "FIN-003",
     titulo: "Contador de Proyectos / Líder Operativo",
     area: "fin",
     areaLabel: "Finanzas",
+    modalidad: "Presencial",
     ubicacion: "Barranquilla",
     salario: "$6.5 MM COP",
     activa: true,
@@ -133,9 +144,11 @@ const VACANTES = [
 
   {
     id: "arquitecto-senior",
+    codigo: "ARQ-002",
     titulo: "Arquitecto Senior",
     area: "arq",
     areaLabel: "Arquitectura",
+    modalidad: "Presencial",
     ubicacion: "Barranquilla",
     salario: "$4.2 MM COP",
     activa: true,
@@ -150,9 +163,11 @@ const VACANTES = [
 
   {
     id: "arquitecto-junior",
+    codigo: "ARQ-003",
     titulo: "Arquitecto Junior",
     area: "arq",
     areaLabel: "Arquitectura",
+    modalidad: "Presencial",
     ubicacion: "Barranquilla",
     salario: "$2.5 MM COP",
     activa: true,
@@ -166,9 +181,11 @@ const VACANTES = [
 
   {
     id: "engineer-junior",
+    codigo: "ING-001",
     titulo: "Engineer Junior",
     area: "ing",
     areaLabel: "Ingeniería",
+    modalidad: "Presencial",
     ubicacion: "Barranquilla",
     salario: "$2.6 MM COP",
     activa: true,
@@ -183,9 +200,11 @@ const VACANTES = [
 
   {
     id: "engineer-senior",
+    codigo: "ING-002",
     titulo: "Engineer Senior",
     area: "ing",
     areaLabel: "Ingeniería",
+    modalidad: "Presencial",
     ubicacion: "Barranquilla",
     salario: "$4.2 MM COP",
     activa: true,
@@ -200,9 +219,11 @@ const VACANTES = [
 
   {
     id: "engineer-senior-electrico",
+    codigo: "ING-003",
     titulo: "Engineer Senior (Ingeniero Eléctrico)",
     area: "ing",
     areaLabel: "Ingeniería",
+    modalidad: "Presencial",
     ubicacion: "Barranquilla",
     salario: "$3.8 MM COP",
     activa: true,
@@ -220,9 +241,11 @@ const VACANTES = [
 
   {
     id: "ingeniero-senior-mep-plumbing",
+    codigo: "ING-004",
     titulo: "Ingeniero Senior MEP (Enfoque Plumbing)",
     area: "ing",
     areaLabel: "Ingeniería",
+    modalidad: "Presencial",
     ubicacion: "Barranquilla",
     salario: "$3.8 MM COP",
     activa: true,
@@ -238,9 +261,11 @@ const VACANTES = [
 
   {
     id: "plumbing-design-engineer",
+    codigo: "ING-005",
     titulo: "Plumbing Design Engineer",
     area: "ing",
     areaLabel: "Ingeniería",
+    modalidad: "Presencial",
     ubicacion: "Barranquilla",
     salario: "A convenir",
     activa: true,
@@ -258,9 +283,11 @@ const VACANTES = [
 
   {
     id: "business-development-executive",
+    codigo: "COM-001",
     titulo: "Business Development Executive",
     area: "com",
     areaLabel: "Comercial",
+    modalidad: "Presencial",
     ubicacion: "Barranquilla",
     salario: "$7.0 MM COP + esquema de comisiones",
     activa: false,
@@ -274,9 +301,11 @@ const VACANTES = [
 
   {
     id: "project-manager-junior",
+    codigo: "MGT-002",
     titulo: "Project Manager Junior",
     area: "mgmt",
     areaLabel: "Management",
+    modalidad: "Presencial",
     ubicacion: "Barranquilla",
     salario: "$5.1 MM COP",
     activa: true,

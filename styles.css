@@ -402,7 +402,7 @@ a   { color: inherit; text-decoration: none; }
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 .filtro-btn {
@@ -427,121 +427,275 @@ a   { color: inherit; text-decoration: none; }
   color: var(--white);
 }
 
-/* Cards */
+/* ── Tabla de vacantes ── */
 .vacantes__lista {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1px;
-  background: var(--border);
   border: 1px solid var(--border);
-}
-
-.vacante-card {
   background: var(--white);
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
+  overflow: hidden;
+}
+
+.vacantes__tabla-header {
+  display: grid;
+  grid-template-columns: 1fr 100px 150px 130px 40px;
+  padding: 0.65rem 1.5rem;
+  background: var(--bg-light);
+  border-bottom: 1px solid var(--border);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  gap: 1rem;
+}
+
+.vacante-fila {
+  display: grid;
+  grid-template-columns: 1fr 100px 150px 130px 40px;
+  padding: 1.1rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
   transition: background var(--transition);
+  align-items: center;
+  gap: 1rem;
 }
-.vacante-card:hover {
-  background: #fafafa;
-}
+.vacante-fila:last-child { border-bottom: none; }
+.vacante-fila:hover { background: #fafafa; }
+.vacante-fila:focus { outline: 2px solid var(--red); outline-offset: -2px; }
 
-.vacante-card__header {
+.vt-codigo { }
+.vt-titulo { min-width: 0; }
+.vt-area { }
+.vt-modalidad { }
+.vt-arrow {
   display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 0.75rem;
-  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  color: var(--text-muted);
+  font-size: 1rem;
+  transition: color var(--transition), transform var(--transition);
+}
+.vacante-fila:hover .vt-arrow {
+  color: var(--red);
+  transform: translateX(3px);
 }
 
-.vacante-card__titulo {
+.codigo-tag {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  font-family: monospace;
+  color: var(--text-muted);
+  background: var(--bg-light);
+  border: 1px solid var(--border);
+  padding: 0.2rem 0.55rem;
+  border-radius: 2px;
+  white-space: nowrap;
+  letter-spacing: 0.05em;
+}
+
+.vt-titulo-text {
   font-family: var(--font-heading);
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   font-weight: 700;
   color: var(--black);
-  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
 }
 
-.vacante-card__tag {
-  font-size: 0.68rem;
+/* Área tags */
+.area-tag {
+  display: inline-block;
+  font-size: 0.65rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  padding: 0.3rem 0.85rem;
+  padding: 0.25rem 0.7rem;
   border-radius: 2px;
   white-space: nowrap;
 }
+.area-tag--arq  { background: #f0f0f0; color: var(--gray-dark); }
+.area-tag--ing  { background: #f0f0f0; color: var(--gray-dark); }
+.area-tag--mgmt { background: #f0f0f0; color: var(--gray-dark); }
+.area-tag--fin  { background: #f0f0f0; color: var(--gray-dark); }
+.area-tag--com  { background: #f9ecec; color: var(--red); }
+.area-tag--tec  { background: #f0f0f0; color: var(--gray-dark); }
 
-/* Tag colors — brand-aligned */
-.vacante-card__tag--arq  { background: #f0f0f0; color: var(--gray-dark); }
-.vacante-card__tag--ing  { background: #f0f0f0; color: var(--gray-dark); }
-.vacante-card__tag--mgmt { background: #f0f0f0; color: var(--gray-dark); }
-.vacante-card__tag--fin  { background: #f0f0f0; color: var(--gray-dark); }
-.vacante-card__tag--com  { background: #f9ecec; color: var(--red); }
-.vacante-card__tag--tec  { background: #f0f0f0; color: var(--gray-dark); }
-
-.vacante-card__desc {
-  font-size: 0.9rem;
+.vt-modalidad-text {
+  font-size: 0.82rem;
   color: var(--text-light);
-  line-height: 1.7;
 }
 
-.vacante-card__meta {
+/* Empty / loading states */
+.vacantes__loading,
+.vacantes__empty {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* ── Panel de detalle (drawer lateral) ── */
+.detail-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 200;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+.detail-backdrop.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.detail-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  max-width: 520px;
+  background: var(--white);
+  z-index: 201;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  box-shadow: -4px 0 40px rgba(0, 0, 0, 0.15);
+}
+.detail-backdrop.open .detail-panel {
+  transform: translateX(0);
+}
+
+.detail-panel__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.1rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+  gap: 1rem;
+}
+
+.detail-panel__codigo {
+  font-size: 0.7rem;
+  font-weight: 700;
+  font-family: monospace;
+  color: var(--text-muted);
+  background: var(--bg-light);
+  border: 1px solid var(--border);
+  padding: 0.2rem 0.65rem;
+  border-radius: 2px;
+  letter-spacing: 0.05em;
+}
+
+.detail-panel__close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--gray);
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  transition: color var(--transition);
+  border-radius: 4px;
+}
+.detail-panel__close:hover { color: var(--black); }
+
+.detail-panel__body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1.75rem 1.5rem;
+}
+
+.detail-panel__titulo {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  color: var(--black);
+}
+
+.detail-panel__meta {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
-  font-size: 0.8rem;
+  gap: 0.5rem;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.detail-modalidad {
+  font-size: 0.82rem;
+  color: var(--text-light);
+  padding: 0.2rem 0.6rem;
+  background: var(--bg-light);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+}
+
+.detail-panel__salario {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 1.5rem;
+  padding: 0.85rem 1rem;
+  background: var(--bg-light);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--red);
+}
+
+.detail-panel__desc {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  line-height: 1.75;
+  margin-bottom: 1.75rem;
+}
+
+.detail-panel__req-title {
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
   color: var(--text-muted);
+  margin-bottom: 0.85rem;
 }
 
-.vacante-card__meta span::before {
-  margin-right: 0.25rem;
-}
-
-/* Requisitos list */
-.vacante-card__req {
+.detail-panel__req-list {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 0.45rem;
-  font-size: 0.875rem;
-  color: var(--text-light);
-  line-height: 1.55;
+  gap: 0.7rem;
 }
 
-.vacante-card__req li {
+.detail-panel__req-list li {
+  font-size: 0.875rem;
+  color: var(--text-light);
+  line-height: 1.65;
   padding-left: 1.1rem;
   position: relative;
   overflow-wrap: break-word;
-  word-break: break-word;
 }
 
-.vacante-card__req li::before {
+.detail-panel__req-list li::before {
   content: '—';
   position: absolute;
   left: 0;
   color: var(--red);
   font-weight: 700;
   font-size: 0.75rem;
-  line-height: 1.7;
+  line-height: 1.9;
 }
 
-/* Empty / loading states */
-.vacantes__loading,
-.vacantes__empty {
-  grid-column: 1 / -1;
-  text-align: center;
-  padding: 3rem 1rem;
-  color: var(--text-muted);
-  font-size: 0.9rem;
-  background: var(--white);
-}
-
-.vacante-card .btn {
-  align-self: flex-start;
-  margin-top: 0.25rem;
+.detail-panel__footer {
+  padding: 1.1rem 1.5rem;
+  border-top: 1px solid var(--border);
+  flex-shrink: 0;
 }
 
 /* ===========================
@@ -689,25 +843,6 @@ a   { color: inherit; text-decoration: none; }
     padding: 1.5rem 0;
   }
 
-  /* Vacante cards */
-  .vacante-card {
-    padding: 1.25rem 1rem;
-    gap: 1rem;
-  }
-
-  .vacante-card__titulo {
-    font-size: 1rem;
-  }
-
-  /* "Postularme" button — full width on mobile */
-  .vacante-card .btn {
-    align-self: stretch;
-    width: 100%;
-    text-align: center;
-    display: block;
-    box-sizing: border-box;
-  }
-
   /* Filters — horizontally scrollable, no wrapping */
   .filtros {
     flex-wrap: nowrap;
@@ -720,6 +855,30 @@ a   { color: inherit; text-decoration: none; }
   .filtros::-webkit-scrollbar { display: none; }
   .filtro-btn {
     flex-shrink: 0;
+  }
+
+  /* Tabla vacantes — mobile: layout 2 columnas simplificado */
+  .vacantes__tabla-header {
+    display: none;
+  }
+  .vacante-fila {
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
+    gap: 0.2rem 0.5rem;
+    padding: 1rem 1.25rem;
+  }
+  .vt-titulo  { grid-column: 1; grid-row: 1; }
+  .vt-codigo  { grid-column: 2; grid-row: 1; }
+  .vt-area    { grid-column: 1; grid-row: 2; }
+  .vt-modalidad { display: none; }
+  .vt-arrow   { grid-column: 2; grid-row: 2; justify-content: flex-end; }
+
+  /* Detail panel — full screen on mobile */
+  .detail-panel {
+    max-width: 100%;
+  }
+  .detail-panel__titulo {
+    font-size: 1.3rem;
   }
 
   /* Nosotros cards */
@@ -763,10 +922,6 @@ a   { color: inherit; text-decoration: none; }
   }
   .nosotros__card:last-child {
     border-right: none;
-  }
-
-  .vacantes__lista {
-    grid-template-columns: repeat(2, 1fr);
   }
 
   .postulacion__inner {

@@ -135,12 +135,34 @@
         <button class="filtro-btn" data-filtro="tec">Técnico</button>
       </div>
 
-      <!-- Las cards se renderizan aquí desde vacantes.js -->
+      <!-- La tabla se renderiza aquí desde vacantes.js -->
       <div class="vacantes__lista" id="vacantes-lista" aria-live="polite">
         <p class="vacantes__loading">Cargando vacantes...</p>
       </div>
     </div>
   </section>
+
+  <!-- ══════════════════════════════════════
+       PANEL DE DETALLE DE VACANTE
+  ══════════════════════════════════════ -->
+  <div class="detail-backdrop" id="detail-backdrop" onclick="handleDetailBackdropClick(event)" role="dialog" aria-modal="true" aria-labelledby="detail-titulo">
+    <div class="detail-panel" id="detail-panel">
+      <div class="detail-panel__header">
+        <span class="detail-panel__codigo" id="detail-codigo"></span>
+        <button class="detail-panel__close" onclick="closeDetail()" aria-label="Cerrar detalle">×</button>
+      </div>
+      <div class="detail-panel__body">
+        <h2 class="detail-panel__titulo" id="detail-titulo"></h2>
+        <div class="detail-panel__meta" id="detail-meta"></div>
+        <div class="detail-panel__salario" id="detail-salario"></div>
+        <p class="detail-panel__desc" id="detail-desc"></p>
+        <div id="detail-requisitos"></div>
+      </div>
+      <div class="detail-panel__footer">
+        <a href="#postulacion" class="btn btn--red btn--full" id="detail-cta" onclick="closeDetail()">Postularme →</a>
+      </div>
+    </div>
+  </div>
 
 
   <!-- ══════════════════════════════════════
@@ -226,6 +248,13 @@
       return v.activa;
     }
 
+    function applyEdits(v) {
+      if (typeof VACANTES_EDITADAS !== 'undefined' && v.id in VACANTES_EDITADAS) {
+        return Object.assign({}, v, VACANTES_EDITADAS[v.id]);
+      }
+      return v;
+    }
+
     function getAllVacantes() {
       const extra = (typeof VACANTES_EXTRA !== 'undefined' && Array.isArray(VACANTES_EXTRA))
         ? VACANTES_EXTRA : [];
@@ -234,10 +263,16 @@
       return [...VACANTES.filter(v => !eliminadas.has(v.id)), ...extra];
     }
 
-    // ── Renderizado de vacantes ──────────────────────────────────
+    function escHtml(str) {
+      return String(str)
+        .replace(/&/g, '&amp;').replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+
+    // ── Renderizado de tabla ──────────────────────────────────────
     function renderVacantes(filtro) {
       const lista = document.getElementById('vacantes-lista');
-      const activas = getAllVacantes().filter(v => {
+      const activas = getAllVacantes().map(applyEdits).filter(v => {
         if (!isActiva(v)) return false;
         if (filtro === 'all') return true;
         return v.area === filtro;
@@ -248,32 +283,45 @@
         return;
       }
 
-      lista.innerHTML = activas.map(v => `
-        <article class="vacante-card" data-area="${v.area}">
-          <div class="vacante-card__header">
-            <h3 class="vacante-card__titulo">${v.titulo}</h3>
-            <span class="vacante-card__tag vacante-card__tag--${v.area}">${v.areaLabel}</span>
+      const filas = activas.map(v => `
+        <div class="vacante-fila" role="button" tabindex="0"
+             onclick="openDetail('${escHtml(v.id)}')"
+             onkeydown="if(event.key==='Enter'||event.key===' ')openDetail('${escHtml(v.id)}')">
+          <div class="vt-titulo">
+            <span class="vt-titulo-text">${escHtml(v.titulo)}</span>
           </div>
-          ${v.descripcion ? `<p class="vacante-card__desc">${v.descripcion}</p>` : ''}
-          <ul class="vacante-card__req" aria-label="Requisitos">
-            ${v.requisitos.map(r => `<li>${r}</li>`).join('')}
-          </ul>
-          <div class="vacante-card__meta">
-            <span>📍 ${v.ubicacion}</span>
-            <span>💰 ${v.salario}</span>
+          <div class="vt-codigo">
+            <span class="codigo-tag">${escHtml(v.codigo || '—')}</span>
           </div>
-          <a href="#postulacion" class="btn btn--outline">Postularme →</a>
-        </article>
+          <div class="vt-area">
+            <span class="area-tag area-tag--${v.area}">${escHtml(v.areaLabel)}</span>
+          </div>
+          <div class="vt-modalidad">
+            <span class="vt-modalidad-text">${escHtml(v.modalidad || 'Presencial')}</span>
+          </div>
+          <div class="vt-arrow" aria-hidden="true">→</div>
+        </div>
       `).join('');
+
+      lista.innerHTML = `
+        <div class="vacantes__tabla-header" aria-hidden="true">
+          <span>Vacante</span>
+          <span>Código</span>
+          <span>Área</span>
+          <span>Modalidad</span>
+          <span></span>
+        </div>
+        ${filas}
+      `;
     }
 
-    // ── Contador de vacantes en el hero ─────────────────────────
+    // ── Contador de vacantes en el hero ──────────────────────────
     function updateCounter() {
       const total = getAllVacantes().filter(v => isActiva(v)).length;
       document.getElementById('count-vacantes').textContent = total;
     }
 
-    // ── Filtros ──────────────────────────────────────────────────
+    // ── Filtros ───────────────────────────────────────────────────
     const filtrosBtns = document.querySelectorAll('.filtro-btn');
     filtrosBtns.forEach(btn => {
       btn.addEventListener('click', () => {
@@ -283,7 +331,64 @@
       });
     });
 
-    // ── Init ─────────────────────────────────────────────────────
+    // ── Panel de detalle ──────────────────────────────────────────
+    function openDetail(id) {
+      const v = getAllVacantes().map(applyEdits).find(x => x.id === id);
+      if (!v) return;
+
+      document.getElementById('detail-codigo').textContent = v.codigo || '';
+      document.getElementById('detail-titulo').textContent = v.titulo;
+
+      const metaParts = [];
+      if (v.areaLabel) {
+        metaParts.push(`<span class="area-tag area-tag--${v.area}">${escHtml(v.areaLabel)}</span>`);
+      }
+      const modalidadText = v.modalidad === 'Presencial' && v.ubicacion
+        ? `${v.modalidad} · ${v.ubicacion}`
+        : (v.modalidad || 'Presencial');
+      metaParts.push(`<span class="detail-modalidad">${escHtml(modalidadText)}</span>`);
+      document.getElementById('detail-meta').innerHTML = metaParts.join('');
+
+      document.getElementById('detail-salario').textContent = v.salario || '';
+
+      const descEl = document.getElementById('detail-desc');
+      if (v.descripcion) {
+        descEl.textContent = v.descripcion;
+        descEl.style.display = '';
+      } else {
+        descEl.style.display = 'none';
+      }
+
+      const reqEl = document.getElementById('detail-requisitos');
+      if (v.requisitos && v.requisitos.length) {
+        reqEl.innerHTML = `
+          <p class="detail-panel__req-title">Requisitos</p>
+          <ul class="detail-panel__req-list">
+            ${v.requisitos.map(r => `<li>${escHtml(r)}</li>`).join('')}
+          </ul>`;
+      } else {
+        reqEl.innerHTML = '';
+      }
+
+      document.getElementById('detail-backdrop').classList.add('open');
+      document.body.style.overflow = 'hidden';
+      document.getElementById('detail-panel').querySelector('.detail-panel__close').focus();
+    }
+
+    function closeDetail() {
+      document.getElementById('detail-backdrop').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    function handleDetailBackdropClick(e) {
+      if (e.target === document.getElementById('detail-backdrop')) closeDetail();
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeDetail();
+    });
+
+    // ── Init ──────────────────────────────────────────────────────
     renderVacantes('all');
     updateCounter();
   </script>
