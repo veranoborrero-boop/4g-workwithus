@@ -1,12 +1,7 @@
 // ═══════════════════════════════════════════════════════════════
 //  VACANTES ESTADO — Panel de RR.HH. 4G Architecture
 //  ⚠️  Generado automáticamente — no editar manualmente.
-//      Usar el panel de administración: /admin.html
-// ═══════════════════════════════════════════════════════════════
-//  VACANTES_ESTADO   : { id: bool }  true = activa | false = inactiva
-//  VACANTES_EXTRA    : vacantes nuevas creadas desde el admin
-//  VACANTES_EDITADAS : ediciones de campos de vacantes base
-//  VACANTES_ELIMINADAS : ids de vacantes base eliminadas
+//  Última actualización: 27/5/2026, 2:20:02 p. m.
 // ═══════════════════════════════════════════════════════════════
 
 const VACANTES_ESTADO = {
@@ -17,7 +12,7 @@ const VACANTES_ESTADO = {
   "cfo": false,
   "contador-proyectos": true,
   "arquitecto-senior": true,
-  "arquitecto-junior": true,
+  "arquitecto-junior": false,
   "engineer-junior": true,
   "engineer-senior": true,
   "engineer-senior-electrico": true,
