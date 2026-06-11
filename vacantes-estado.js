@@ -1,12 +1,12 @@
 // ═══════════════════════════════════════════════════════════════
 //  VACANTES ESTADO — Panel de RR.HH. 4G Architecture
 //  ⚠️  Generado automáticamente — no editar manualmente.
-//  Última actualización: 11/6/2026, 3:39:53 p. m.
+//  Última actualización: 11/6/2026, 4:43:51 p. m.
 // ═══════════════════════════════════════════════════════════════
 
 const VACANTES_ESTADO = {
   "technician-junior": false,
-  "bi-analyst": true,
+  "bi-analyst": false,
   "project-manager-senior": true,
   "consultant-senior": true,
   "cfo": false,
@@ -45,6 +45,42 @@ const VACANTES_EXTRA = [
   }
 ];
 
-const VACANTES_EDITADAS = {};
+const VACANTES_EDITADAS = {
+  "arquitecto-senior": {
+    "titulo": "Arquitecto Senior",
+    "codigo": "ARQ-002",
+    "area": "arq",
+    "areaLabel": "Arquitectura",
+    "modalidad": "Presencial",
+    "ubicacion": "Barranquilla",
+    "salario": "$4.0 MM COP",
+    "descripcion": "Desarrollar de principio a fin planos de proyectos arquitectónicos en cualquiera de sus fases",
+    "requisitos": [
+      "Profesional en Arquitectura",
+      "Experiencia en obra",
+      "Manejo avanzado de CAD Y REVIT",
+      "Inglés nivel B2",
+      "Experiencia en proyectos de arquitectura por mínimo 3 años"
+    ]
+  },
+  "project-manager-junior": {
+    "titulo": "Project Manager Junior",
+    "codigo": "MGT-002",
+    "area": "mgmt",
+    "areaLabel": "Management",
+    "modalidad": "Presencial",
+    "ubicacion": "Barranquilla",
+    "salario": "$4.9 MM COP",
+    "descripcion": "Gestionar clientes asignados, proyectos y equipo de trabajo. Coordinando con los clientes y equipo de trabajo los alcances, actividades y tiempos de entrega de los proyectos, para el adecuado desarrollo.",
+    "requisitos": [
+      "Profesional en Ingeniería civil, Ingeniería Eléctrica, Arquitectura o afines",
+      "Manejo Avanzado de REVIT y AutoCAD, BIM",
+      "Inglés nivel B2 Conversacional",
+      "Experiencia en coordinación, preferiblemente en ejecución de proyectos",
+      "Experiencia en liderazgo de equipos",
+      "Experiencia en desarrollo de documentos de planimetría técnica de proyectos"
+    ]
+  }
+};
 
 const VACANTES_ELIMINADAS = [];
