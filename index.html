@@ -159,7 +159,7 @@
         <div id="detail-requisitos"></div>
       </div>
       <div class="detail-panel__footer">
-        <a href="#postulacion" class="btn btn--red btn--full" id="detail-cta" onclick="closeDetail()">Postularme →</a>
+        <a href="#postulacion" class="btn btn--red btn--full" id="detail-cta" onclick="applyToVacante()">Postularme →</a>
       </div>
     </div>
   </div>
@@ -191,6 +191,11 @@
 
         <!-- Tally.so embed -->
         <div class="tally-wrapper">
+          <div class="vacante-select-wrap">
+            <label class="vacante-select-label" for="vacante-select">Vacante de interés</label>
+            <select id="vacante-select" class="vacante-select" onchange="syncTallyVacante()"></select>
+            <p class="vacante-select-hint">Elige primero la vacante y luego llena el formulario.</p>
+          </div>
           <iframe
             data-tally-src="https://tally.so/embed/vGNyyv?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
             loading="lazy"
@@ -331,8 +336,46 @@
       });
     });
 
+    // ── Selector de vacante → Tally (campo oculto "vacante") ─────
+    const TALLY_BASE = 'https://tally.so/embed/vGNyyv?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1';
+    const APLICACION_ESPONTANEA = 'Aplicación espontánea';
+
+    function vacanteLabel(v) {
+      return v.codigo ? `${v.codigo} — ${v.titulo}` : v.titulo;
+    }
+
+    function populateVacanteSelect() {
+      const sel = document.getElementById('vacante-select');
+      const activas = getAllVacantes().map(applyEdits).filter(isActiva);
+      sel.innerHTML = [
+        `<option value="${APLICACION_ESPONTANEA}">Aplicación espontánea (sin vacante específica)</option>`,
+        ...activas.map(v => `<option value="${escHtml(vacanteLabel(v))}">${escHtml(v.titulo)}${v.codigo ? ` (${escHtml(v.codigo)})` : ''}</option>`)
+      ].join('');
+    }
+
+    function syncTallyVacante() {
+      const val = document.getElementById('vacante-select').value;
+      const iframe = document.querySelector('.tally-wrapper iframe');
+      const newSrc = TALLY_BASE + '&vacante=' + encodeURIComponent(val);
+      if (iframe.src !== newSrc) iframe.src = newSrc;
+    }
+
+    function applyToVacante() {
+      if (currentDetailId) {
+        const v = getAllVacantes().map(applyEdits).find(x => x.id === currentDetailId);
+        if (v) {
+          const sel = document.getElementById('vacante-select');
+          sel.value = vacanteLabel(v);
+          syncTallyVacante();
+        }
+      }
+      closeDetail();
+    }
+
     // ── Panel de detalle ──────────────────────────────────────────
+    let currentDetailId = null;
     function openDetail(id) {
+      currentDetailId = id;
       const v = getAllVacantes().map(applyEdits).find(x => x.id === id);
       if (!v) return;
 
@@ -391,6 +434,8 @@
     // ── Init ──────────────────────────────────────────────────────
     renderVacantes('all');
     updateCounter();
+    populateVacanteSelect();
+    syncTallyVacante();
   </script>
 
   <!-- Tally embed loader -->
