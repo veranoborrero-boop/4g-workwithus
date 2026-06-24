@@ -1,7 +1,7 @@
 // ═══════════════════════════════════════════════════════════════
 //  VACANTES ESTADO — Panel de RR.HH. 4G Architecture
 //  ⚠️  Generado automáticamente — no editar manualmente.
-//  Última actualización: 11/6/2026, 4:43:51 p. m.
+//  Última actualización: 24/6/2026, 5:26:13 p. m.
 // ═══════════════════════════════════════════════════════════════
 
 const VACANTES_ESTADO = {
@@ -20,7 +20,8 @@ const VACANTES_ESTADO = {
   "plumbing-design-engineer": false,
   "business-development-executive": false,
   "project-manager-junior": true,
-  "operation-development-manager-mq9yo1vo": true
+  "operation-development-manager-mq9yo1vo": true,
+  "modelador-bim-mqsmyh3g": true
 };
 
 const VACANTES_EXTRA = [
@@ -42,6 +43,24 @@ const VACANTES_EXTRA = [
       "Nivel de inglés avanzado (B2 - C1)"
     ],
     "descripcion": "Coordinar cuentas de clientes, verificando la asignación de equipos de trabajos acordes a los proyectos a realizar, generando seguimiento ante cliente de los avances al proyecto. Así como gestionar la asignación de proyectos a los equipos."
+  },
+  {
+    "id": "modelador-bim-mqsmyh3g",
+    "titulo": "Modelador BIM",
+    "codigo": "CMS - 001",
+    "area": "cms",
+    "areaLabel": "Construction Management Services",
+    "modalidad": "Presencial",
+    "ubicacion": "Barranquilla",
+    "salario": "$ 3.3 MM COP – $ 4.2 MM COP",
+    "activa": true,
+    "requisitos": [
+      "Tecnólogo o Profesional de Arquitectura, Ingeniería Civil, Ingeniería Mecánica o carreras afines",
+      "Experiencia en modelos tridimensionales constructivos de arquitectura, estructura y MEP",
+      "Manejo Avanzado de REVIT",
+      "Inglés (B2- C1)"
+    ],
+    "descripcion": "Como modelador BIM estarás a cargo de supervisar, organizar y modelar de manera estratégica y técnica todas las fases de proyectos de construcción y arquitectura, garantizando los estándares de calidad, normatividad norteamericana y requerimientos del cliente para espacios arquitectónicos de interiores y exteriores utilizando herramientas digitales como Revit, AutoCAD y Lumion, garantizando la correcta interpretación del diseño, su coordinación con especialidades técnicas (MEP) en entornos tridimensionales utilizando Autodesk contruction cloud (ACC), y la presentación y revisión del modelo final a través de plataformas colaborativas como Procore."
   }
 ];
 
