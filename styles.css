@@ -521,6 +521,7 @@ a   { color: inherit; text-decoration: none; }
 .area-tag--fin  { background: #f0f0f0; color: var(--gray-dark); }
 .area-tag--com  { background: #f9ecec; color: var(--red); }
 .area-tag--tec  { background: #f0f0f0; color: var(--gray-dark); }
+.area-tag--cms  { background: #f0f0f0; color: var(--gray-dark); }
 
 .vt-modalidad-text {
   font-size: 0.82rem;

@@ -133,6 +133,7 @@
         <button class="filtro-btn" data-filtro="fin">Finanzas</button>
         <button class="filtro-btn" data-filtro="com">Comercial</button>
         <button class="filtro-btn" data-filtro="tec">Técnico</button>
+        <button class="filtro-btn" data-filtro="cms">Construction Mgmt</button>
       </div>
 
       <!-- La tabla se renderiza aquí desde vacantes.js -->
@@ -338,7 +339,6 @@
 
     // ── Selector de vacante → Tally (campo oculto "vacante") ─────
     const TALLY_BASE = 'https://tally.so/embed/vGNyyv?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1';
-    const APLICACION_ESPONTANEA = 'Aplicación espontánea';
 
     function vacanteLabel(v) {
       return v.codigo ? `${v.codigo} — ${v.titulo}` : v.titulo;
@@ -347,10 +347,13 @@
     function populateVacanteSelect() {
       const sel = document.getElementById('vacante-select');
       const activas = getAllVacantes().map(applyEdits).filter(isActiva);
-      sel.innerHTML = [
-        `<option value="${APLICACION_ESPONTANEA}">Aplicación espontánea (sin vacante específica)</option>`,
-        ...activas.map(v => `<option value="${escHtml(vacanteLabel(v))}">${escHtml(v.titulo)}${v.codigo ? ` (${escHtml(v.codigo)})` : ''}</option>`)
-      ].join('');
+      if (activas.length === 0) {
+        sel.innerHTML = '<option value="" disabled selected>No hay vacantes disponibles por el momento</option>';
+        return;
+      }
+      sel.innerHTML = activas
+        .map(v => `<option value="${escHtml(vacanteLabel(v))}">${escHtml(v.titulo)}${v.codigo ? ` (${escHtml(v.codigo)})` : ''}</option>`)
+        .join('');
     }
 
     function syncTallyVacante() {
