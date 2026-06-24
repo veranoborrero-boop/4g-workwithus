@@ -464,7 +464,7 @@ a   { color: inherit; text-decoration: none; }
 
 .vt-codigo { }
 .vt-titulo { min-width: 0; }
-.vt-area { }
+.vt-area { min-width: 0; overflow: hidden; }
 .vt-modalidad { }
 .vt-arrow {
   display: flex;
@@ -507,6 +507,7 @@ a   { color: inherit; text-decoration: none; }
 /* Área tags */
 .area-tag {
   display: inline-block;
+  max-width: 100%;
   font-size: 0.65rem;
   font-weight: 700;
   letter-spacing: 0.1em;
@@ -514,6 +515,9 @@ a   { color: inherit; text-decoration: none; }
   padding: 0.25rem 0.7rem;
   border-radius: 2px;
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: middle;
 }
 .area-tag--arq  { background: #f0f0f0; color: var(--gray-dark); }
 .area-tag--ing  { background: #f0f0f0; color: var(--gray-dark); }

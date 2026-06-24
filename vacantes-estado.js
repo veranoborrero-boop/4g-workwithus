@@ -49,7 +49,7 @@ const VACANTES_EXTRA = [
     "titulo": "Modelador BIM",
     "codigo": "CMS - 001",
     "area": "cms",
-    "areaLabel": "Construction Management Services",
+    "areaLabel": "CMS",
     "modalidad": "Presencial",
     "ubicacion": "Barranquilla",
     "salario": "$ 3.3 MM COP – $ 4.2 MM COP",
