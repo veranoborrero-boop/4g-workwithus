@@ -1,7 +1,7 @@
 // ═══════════════════════════════════════════════════════════════
 //  VACANTES ESTADO — Panel de RR.HH. 4G Architecture
 //  ⚠️  Generado automáticamente — no editar manualmente.
-//  Última actualización: 30/6/2026, 9:38:09 a. m.
+//  Última actualización: 15/7/2026, 11:44:46 a. m.
 // ═══════════════════════════════════════════════════════════════
 
 const VACANTES_ESTADO = {
@@ -11,7 +11,7 @@ const VACANTES_ESTADO = {
   "consultant-senior": false,
   "cfo": false,
   "contador-proyectos": false,
-  "arquitecto-senior": true,
+  "arquitecto-senior": false,
   "arquitecto-junior": false,
   "engineer-junior": false,
   "engineer-senior": false,
@@ -92,9 +92,9 @@ const VACANTES_EDITADAS = {
     "salario": "$4.9 MM COP",
     "descripcion": "Gestionar clientes asignados, proyectos y equipo de trabajo. Coordinando con los clientes y equipo de trabajo los alcances, actividades y tiempos de entrega de los proyectos, para el adecuado desarrollo.",
     "requisitos": [
-      "Profesional en Ingeniería civil, Ingeniería Eléctrica, Arquitectura o afines",
+      "Profesional en Ingeniería civil, Ingeniería Eléctrica, Ingeniería Mecánica o Arquitectura",
       "Manejo Avanzado de REVIT y AutoCAD, BIM",
-      "Inglés nivel B2 Conversacional",
+      "Inglés nivel B2 o C1 Conversacional",
       "Experiencia en coordinación, preferiblemente en ejecución de proyectos",
       "Experiencia en liderazgo de equipos",
       "Experiencia en desarrollo de documentos de planimetría técnica de proyectos"
