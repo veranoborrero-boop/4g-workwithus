@@ -1,7 +1,7 @@
 // ═══════════════════════════════════════════════════════════════
 //  VACANTES ESTADO — Panel de RR.HH. 4G Architecture
 //  ⚠️  Generado automáticamente — no editar manualmente.
-//  Última actualización: 22/7/2026, 3:49:47 p. m.
+//  Última actualización: 22/7/2026, 3:50:07 p. m.
 // ═══════════════════════════════════════════════════════════════
 
 const VACANTES_ESTADO = {
@@ -98,6 +98,23 @@ const VACANTES_EDITADAS = {
       "Experiencia en coordinación, preferiblemente en ejecución de proyectos",
       "Experiencia en liderazgo de equipos",
       "Experiencia en desarrollo de documentos de planimetría técnica de proyectos"
+    ]
+  },
+  "project-manager-senior": {
+    "titulo": "Project Manager Senior",
+    "codigo": "MGT-001",
+    "area": "mgmt",
+    "areaLabel": "Management",
+    "modalidad": "Presencial",
+    "ubicacion": "Barranquilla",
+    "salario": "$7.0 MM COP",
+    "descripcion": "",
+    "requisitos": [
+      "Profesional en Arquitectura",
+      "Manejo Intermedio - avanzado de CAD y REVIT",
+      "Experiencia de más de 3 años en manejo de equipos de trabajo",
+      "Conocimiento de metodología BIM en proyectos de construcción",
+      "Inglés avanzado nivel B2 - C1"
     ]
   }
 };
