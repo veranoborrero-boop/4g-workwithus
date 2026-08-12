@@ -1,13 +1,13 @@
 // ═══════════════════════════════════════════════════════════════
 //  VACANTES ESTADO — Panel de RR.HH. 4G Architecture
 //  ⚠️  Generado automáticamente — no editar manualmente.
-//  Última actualización: 30/7/2026, 2:44:17 p. m.
+//  Última actualización: 12/8/2026, 9:33:25 a. m.
 // ═══════════════════════════════════════════════════════════════
 
 const VACANTES_ESTADO = {
   "technician-junior": false,
-  "bi-analyst": false,
-  "project-manager-senior": true,
+  "bi-analyst": true,
+  "project-manager-senior": false,
   "consultant-senior": false,
   "cfo": false,
   "contador-proyectos": false,
@@ -20,7 +20,7 @@ const VACANTES_ESTADO = {
   "plumbing-design-engineer": false,
   "business-development-executive": false,
   "project-manager-junior": false,
-  "operation-development-manager-mq9yo1vo": true,
+  "operation-development-manager-mq9yo1vo": false,
   "modelador-bim-mqsmyh3g": false
 };
 
@@ -115,6 +115,23 @@ const VACANTES_EDITADAS = {
       "Experiencia de más de 3 años en manejo de equipos de trabajo",
       "Conocimiento de metodología BIM en proyectos de construcción",
       "Inglés avanzado nivel B2 - C1"
+    ]
+  },
+  "bi-analyst": {
+    "titulo": "Business Intelligence Analyst",
+    "codigo": "FIN-001",
+    "area": "fin",
+    "areaLabel": "Finanzas",
+    "modalidad": "Presencial",
+    "ubicacion": "Barranquilla",
+    "salario": "$3.5 MM COP – $4.9 MM COP",
+    "descripcion": "Responsable de transformar datos en insights que generen valor para la organización. Brindar soporte a la toma de decisiones estratégicas mediante el análisis de datos, la generación de informes relevantes. Desarrollar dashboards o modelos para proyectar ingresos, gastos y otros indicadores clave. Analizar estados financieros, KPIs operativos y métricas de desempeño del negocio. Diseñar, actualizar y mantener dashboards e informes utilizando herramientas de BI (Power BI u otras).",
+    "requisitos": [
+      "Profesional en Ingeniería Civil",
+      "Más de 2 años de experiencia en cargos de apoyo a procesos y análisis de indicadores",
+      "Enfoque y experiencia en estimación y costos",
+      "Conocimientos en análisis y visualización de datos en Power BI",
+      "Nivel de Inglés B2"
     ]
   }
 };
