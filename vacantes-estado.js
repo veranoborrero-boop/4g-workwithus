@@ -1,12 +1,12 @@
 // ═══════════════════════════════════════════════════════════════
 //  VACANTES ESTADO — Panel de RR.HH. 4G Architecture
 //  ⚠️  Generado automáticamente — no editar manualmente.
-//  Última actualización: 12/8/2026, 9:33:25 a. m.
+//  Última actualización: 14/8/2026, 5:31:00 p. m.
 // ═══════════════════════════════════════════════════════════════
 
 const VACANTES_ESTADO = {
   "technician-junior": false,
-  "bi-analyst": true,
+  "bi-analyst": false,
   "project-manager-senior": false,
   "consultant-senior": false,
   "cfo": false,
@@ -21,7 +21,8 @@ const VACANTES_ESTADO = {
   "business-development-executive": false,
   "project-manager-junior": false,
   "operation-development-manager-mq9yo1vo": false,
-  "modelador-bim-mqsmyh3g": false
+  "modelador-bim-mqsmyh3g": false,
+  "account-payable-specialist-mstg8pio": true
 };
 
 const VACANTES_EXTRA = [
@@ -61,6 +62,28 @@ const VACANTES_EXTRA = [
       "Inglés (B2- C1)"
     ],
     "descripcion": "Como modelador BIM estarás a cargo de supervisar, organizar y modelar de manera estratégica y técnica todas las fases de proyectos de construcción y arquitectura, garantizando los estándares de calidad, normatividad norteamericana y requerimientos del cliente para espacios arquitectónicos de interiores y exteriores utilizando herramientas digitales como Revit, AutoCAD y Lumion, garantizando la correcta interpretación del diseño, su coordinación con especialidades técnicas (MEP) en entornos tridimensionales utilizando Autodesk contruction cloud (ACC), y la presentación y revisión del modelo final a través de plataformas colaborativas como Procore."
+  },
+  {
+    "id": "account-payable-specialist-mstg8pio",
+    "titulo": "Account Payable Specialist",
+    "codigo": "FIN - 004",
+    "area": "fin",
+    "areaLabel": "Finanzas",
+    "modalidad": "Híbrido",
+    "ubicacion": "Barranquilla",
+    "salario": "$4.5MM COP",
+    "activa": true,
+    "requisitos": [
+      "Profesional en Contabilidad",
+      "Más de 4 años de experiencia en cuentas por pagar o contabilidad general",
+      "Experiencia en la industria de la construcción",
+      "Manejo de Excel y Microsoft Office",
+      "Conocimientos en procesos de cuentas por pagar, facturación y conciliaciones",
+      "Inglés B2-C1 para trabajar directamente con clientes de Norteamérica",
+      "Disponibilidad para trabajar presencialmente en Barranquilla, Colombia",
+      "Experiencia con normativa americana de contabilidad y conocimiento en US GAPP"
+    ],
+    "descripcion": "El Accounts Payable Specialist será responsable de gestionar el proceso de cuentas por pagar, incluyendo la revisión y procesamiento de facturas, gestión de pagos, conciliaciones y atención a proveedores. También apoyará el cierre contable y garantizará la precisión y organización de la información financiera. El cargo requiere inglés B2-C1 para trabajar directamente con clientes de Norteamérica."
   }
 ];
 
