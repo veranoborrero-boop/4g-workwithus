@@ -1,7 +1,7 @@
 // ═══════════════════════════════════════════════════════════════
 //  VACANTES ESTADO — Panel de RR.HH. 4G Architecture
 //  ⚠️  Generado automáticamente — no editar manualmente.
-//  Última actualización: 14/8/2026, 5:31:00 p. m.
+//  Última actualización: 25/8/2026, 4:51:50 p. m.
 // ═══════════════════════════════════════════════════════════════
 
 const VACANTES_ESTADO = {
@@ -22,7 +22,8 @@ const VACANTES_ESTADO = {
   "project-manager-junior": false,
   "operation-development-manager-mq9yo1vo": false,
   "modelador-bim-mqsmyh3g": false,
-  "account-payable-specialist-mstg8pio": true
+  "account-payable-specialist-mstg8pio": true,
+  "modelador-bim-senior-mt979f5p": true
 };
 
 const VACANTES_EXTRA = [
@@ -84,6 +85,24 @@ const VACANTES_EXTRA = [
       "Experiencia con normativa americana de contabilidad y conocimiento en US GAPP"
     ],
     "descripcion": "El Accounts Payable Specialist será responsable de gestionar el proceso de cuentas por pagar, incluyendo la revisión y procesamiento de facturas, gestión de pagos, conciliaciones y atención a proveedores. También apoyará el cierre contable y garantizará la precisión y organización de la información financiera. El cargo requiere inglés B2-C1 para trabajar directamente con clientes de Norteamérica."
+  },
+  {
+    "id": "modelador-bim-senior-mt979f5p",
+    "titulo": "Modelador BIM Senior",
+    "codigo": "CMS - 002",
+    "area": "cms",
+    "areaLabel": "CMS",
+    "modalidad": "Presencial",
+    "ubicacion": "Barranquilla",
+    "salario": "4.2 MM COP – 4.8MM COP",
+    "activa": true,
+    "requisitos": [
+      "Tres años de experiencia en modelos tridimensionales constructivos de arquitectura, estructura y MEP",
+      "Inglés B2- C1",
+      "Manejo de Revit Avanzado",
+      "Profesional en Arquitectura, Ingeniería Civil o Ingeniería Mecánica."
+    ],
+    "descripcion": "Como modelador BIM Senior estarás a cargo de supervisar, organizar y modelar de manera estratégica y técnica todas las fases de proyectos de construcción y arquitectura, garantizando los estándares de calidad, normatividad norteamericana y requerimientos del cliente para espacios arquitectónicos de interiores y exteriores utilizando herramientas digitales como Revit garantizando la correcta interpretación del diseño, su coordinación con especialidades técnicas (MEP) en entornos tridimensionales utilizando Autodesk contruction cloud (ACC)."
   }
 ];
 
