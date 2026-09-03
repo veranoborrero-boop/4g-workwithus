@@ -1,7 +1,7 @@
 // ═══════════════════════════════════════════════════════════════
 //  VACANTES ESTADO — Panel de RR.HH. 4G Architecture
 //  ⚠️  Generado automáticamente — no editar manualmente.
-//  Última actualización: 3/9/2026, 4:29:54 p. m.
+//  Última actualización: 3/9/2026, 4:30:43 p. m.
 // ═══════════════════════════════════════════════════════════════
 
 const VACANTES_ESTADO = {
@@ -174,6 +174,40 @@ const VACANTES_EDITADAS = {
       "Enfoque y experiencia en estimación y costos",
       "Conocimientos en análisis y visualización de datos en Power BI",
       "Nivel de Inglés B2"
+    ]
+  },
+  "engineer-senior": {
+    "titulo": "Engineer Senior",
+    "codigo": "ING-002",
+    "area": "ing",
+    "areaLabel": "Ingeniería",
+    "modalidad": "Presencial",
+    "ubicacion": "Barranquilla",
+    "salario": "$4.2 MM COP",
+    "descripcion": "",
+    "requisitos": [
+      "Ingeniero Eléctrico, Ingeniero Electrónico o afines",
+      "Experiencia en dibujo y modelado de proyectos de ingeniería MEP",
+      "Inglés B2 - C1",
+      "2-3 años de experiencia laboral en manejo de proyectos y/o construcciones",
+      "Software: Revit, NavisWorks, DiaLux (preferiblemente), Autocad"
+    ]
+  },
+  "engineer-junior": {
+    "titulo": "Engineer Junior",
+    "codigo": "ING-001",
+    "area": "ing",
+    "areaLabel": "Ingeniería",
+    "modalidad": "Presencial",
+    "ubicacion": "Barranquilla",
+    "salario": "$2.5 MM COP",
+    "descripcion": "",
+    "requisitos": [
+      "Ingeniero Eléctrico, Ingeniero Electrónico o afines",
+      "Experiencia en dibujo y modelado de proyectos de ingeniería MEP",
+      "Inglés B2",
+      "1 año de experiencia laboral en manejo de proyectos",
+      "Software: Revit, NavisWorks, DiaLux (preferiblemente), Autocad"
     ]
   }
 };
