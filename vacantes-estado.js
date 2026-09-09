@@ -1,7 +1,7 @@
 // ═══════════════════════════════════════════════════════════════
 //  VACANTES ESTADO — Panel de RR.HH. 4G Architecture
 //  ⚠️  Generado automáticamente — no editar manualmente.
-//  Última actualización: 3/9/2026, 4:30:43 p. m.
+//  Última actualización: 9/9/2026, 4:28:56 p. m.
 // ═══════════════════════════════════════════════════════════════
 
 const VACANTES_ESTADO = {
@@ -75,7 +75,7 @@ const VACANTES_EXTRA = [
     "salario": "$4.5MM COP",
     "activa": true,
     "requisitos": [
-      "Profesional en Contabilidad",
+      "Profesional en Contabilidad (excluyente)",
       "Más de 4 años de experiencia en cuentas por pagar o contabilidad general",
       "Experiencia en la industria de la construcción",
       "Manejo de Excel y Microsoft Office",
