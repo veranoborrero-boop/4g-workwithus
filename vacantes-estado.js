@@ -1,7 +1,7 @@
 // ═══════════════════════════════════════════════════════════════
 //  VACANTES ESTADO — Panel de RR.HH. 4G Architecture
 //  ⚠️  Generado automáticamente — no editar manualmente.
-//  Última actualización: 9/9/2026, 4:29:29 p. m.
+//  Última actualización: 9/9/2026, 4:30:06 p. m.
 // ═══════════════════════════════════════════════════════════════
 
 const VACANTES_ESTADO = {
@@ -66,7 +66,7 @@ const VACANTES_EXTRA = [
   },
   {
     "id": "account-payable-specialist-mstg8pio",
-    "titulo": "Account Payable Specialist",
+    "titulo": "Staff Accountant - Accounts Payable",
     "codigo": "FIN - 004",
     "area": "fin",
     "areaLabel": "Finanzas",
