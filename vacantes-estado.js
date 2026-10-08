@@ -1,7 +1,7 @@
 // ═══════════════════════════════════════════════════════════════
 //  VACANTES ESTADO — Panel de RR.HH. 4G Architecture
 //  ⚠️  Generado automáticamente — no editar manualmente.
-//  Última actualización: 6/10/2026, 10:41:51 a. m.
+//  Última actualización: 8/10/2026, 3:04:30 p. m.
 // ═══════════════════════════════════════════════════════════════
 
 const VACANTES_ESTADO = {
@@ -19,7 +19,7 @@ const VACANTES_ESTADO = {
   "ingeniero-senior-mep-plumbing": false,
   "plumbing-design-engineer": false,
   "business-development-executive": false,
-  "project-manager-junior": false,
+  "project-manager-junior": true,
   "operation-development-manager-mq9yo1vo": false,
   "modelador-bim-mqsmyh3g": false,
   "account-payable-specialist-mstg8pio": true,
