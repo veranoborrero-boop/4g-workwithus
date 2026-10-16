@@ -1,20 +1,20 @@
 // ═══════════════════════════════════════════════════════════════
 //  VACANTES ESTADO — Panel de RR.HH. 4G Architecture
 //  ⚠️  Generado automáticamente — no editar manualmente.
-//  Última actualización: 8/10/2026, 3:04:30 p. m.
+//  Última actualización: 16/10/2026, 8:31:28 a. m.
 // ═══════════════════════════════════════════════════════════════
 
 const VACANTES_ESTADO = {
-  "technician-junior": false,
+  "technician-junior": true,
   "bi-analyst": false,
-  "project-manager-senior": false,
+  "project-manager-senior": true,
   "consultant-senior": false,
   "cfo": false,
   "contador-proyectos": false,
-  "arquitecto-senior": false,
-  "arquitecto-junior": false,
-  "engineer-junior": true,
-  "engineer-senior": true,
+  "arquitecto-senior": true,
+  "arquitecto-junior": true,
+  "engineer-junior": false,
+  "engineer-senior": false,
   "engineer-senior-electrico": false,
   "ingeniero-senior-mep-plumbing": false,
   "plumbing-design-engineer": false,
@@ -22,7 +22,7 @@ const VACANTES_ESTADO = {
   "project-manager-junior": true,
   "operation-development-manager-mq9yo1vo": false,
   "modelador-bim-mqsmyh3g": false,
-  "account-payable-specialist-mstg8pio": true,
+  "account-payable-specialist-mstg8pio": false,
   "modelador-bim-senior-mt979f5p": false
 };
 
