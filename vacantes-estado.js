@@ -1,11 +1,11 @@
 // ═══════════════════════════════════════════════════════════════
 //  VACANTES ESTADO — Panel de RR.HH. 4G Architecture
 //  ⚠️  Generado automáticamente — no editar manualmente.
-//  Última actualización: 10/11/2026, 10:53:15 a. m.
+//  Última actualización: 10/11/2026, 10:53:25 a. m.
 // ═══════════════════════════════════════════════════════════════
 
 const VACANTES_ESTADO = {
-  "technician-junior": true,
+  "technician-junior": false,
   "bi-analyst": false,
   "project-manager-senior": true,
   "consultant-senior": false,
