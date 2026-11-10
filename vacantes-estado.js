@@ -1,7 +1,7 @@
 // ═══════════════════════════════════════════════════════════════
 //  VACANTES ESTADO — Panel de RR.HH. 4G Architecture
 //  ⚠️  Generado automáticamente — no editar manualmente.
-//  Última actualización: 5/11/2026, 9:28:53 a. m.
+//  Última actualización: 10/11/2026, 10:53:15 a. m.
 // ═══════════════════════════════════════════════════════════════
 
 const VACANTES_ESTADO = {
@@ -12,7 +12,7 @@ const VACANTES_ESTADO = {
   "cfo": false,
   "contador-proyectos": false,
   "arquitecto-senior": true,
-  "arquitecto-junior": true,
+  "arquitecto-junior": false,
   "engineer-junior": false,
   "engineer-senior": false,
   "engineer-senior-electrico": false,
